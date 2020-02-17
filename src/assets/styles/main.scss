@@ -1,0 +1,9 @@
+// Helper apply here
+@import "../styles/Helper/variable.scss";
+@import "../styles/Base/customize.scss";
+//Base apply here
+@import "../styles/Base/reset.scss";
+@import "../styles/Base/customize.scss";
+//Component apply here
+//HomeComponent
+@import "../../Components/HomeComponent/style.scss";
