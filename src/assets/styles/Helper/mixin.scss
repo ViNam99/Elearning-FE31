@@ -1,0 +1,6 @@
+@mixin styleTextList($color, $line, $dis, $fs){
+    color:$color;
+    line-height: $line;
+    display: $dis;
+    font-size: $fs;
+}

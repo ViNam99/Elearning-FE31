@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Container} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock, faMapSigns } from '@fortawesome/free-solid-svg-icons'
 // import { Link } from 'react-router-dom';
 import logo from "../../assets/img/logo2.png";
 const prefix = "footer";
@@ -12,12 +14,12 @@ const FooterComponent = () => {
         <h6>Use link</h6>
         <Row>
           <Col md="6" xs="3" sm="12">
-            <ListGroup>
-              <ListGroupItem><a>Themeforest</a></ListGroupItem>
-              <ListGroupItem><a>Graphicriver</a></ListGroupItem>
-              <ListGroupItem><a>Commodity</a></ListGroupItem>
-              <ListGroupItem><a>Mutual Funds</a></ListGroupItem>
-              <ListGroupItem><a>Advisors</a></ListGroupItem>
+            <ListGroup flush>
+              <ListGroupItem><a href="">Themeforest</a></ListGroupItem>
+              <ListGroupItem><a href="">Graphicriver</a></ListGroupItem>
+              <ListGroupItem><a href="">Commodity</a></ListGroupItem>
+              <ListGroupItem><a href="">Mutual Funds</a></ListGroupItem>
+              <ListGroupItem><a href="">Advisors</a></ListGroupItem>
             </ListGroup>
           </Col>
           <Col md="6" xs="3" sm="12">           
@@ -37,8 +39,8 @@ const FooterComponent = () => {
           <div className="logo"><a href="index.html"><img src={logo} alt /></a></div>
           <p>We provide expert Business Coaching to both individuals and businesses. With over 30 years of experience we’ll ensure that you’re always getting the best guidance from the top people in the entire industry.</p>
           <ListGroup>
-            <ListGroupItem><i className="flaticon-stopwatch" /> Monday -Sturday at 09am-6pm</ListGroupItem>
-            <ListGroupItem><i className="flaticon-map-line" /> 52 Tailstoi Town 546 IT, NYC </ListGroupItem>
+            <ListGroupItem><FontAwesomeIcon icon={faClock}  /> Monday -Sturday at 09am-6pm</ListGroupItem>
+            <ListGroupItem><FontAwesomeIcon icon={faMapSigns}  /> 52 Tailstoi Town 546 IT, NYC </ListGroupItem>
           </ListGroup>
         </div>
       </Col> {/* /.footer-logo-widget */}
@@ -58,7 +60,7 @@ const FooterComponent = () => {
     </Row> {/* /.top-footer */}
   </Container> {/* /.container */}
   <div className="bottom-footer">
-    <Container className="container">
+    <Container >
       <p>Copyright © 2018 <a href="#" className="tran3s">Remakri</a> Template by <a href="#" className="tran3s" target="_blank">Template_mr</a></p>
     </Container> {/* /.container */}
   </div> {/* /.bottom-footer */}
