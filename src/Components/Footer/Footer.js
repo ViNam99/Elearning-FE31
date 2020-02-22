@@ -62,7 +62,7 @@ const Footer = () => {
       <p>Copyright © 2018 <a href="#" className="tran3s">Remakri</a> Template by <a href="#" className="tran3s" target="_blank">Template_mr</a></p>
     </div> {/* /.container */}
   </div> {/* /.bottom-footer */}
-</div>
+</div>q
     </footer>
     );
 };

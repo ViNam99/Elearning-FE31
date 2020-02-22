@@ -9,6 +9,7 @@ const App = () => {
       <HomeComponent />
       <Footer/>
     </div>
+    // hi
   );
 };
 
