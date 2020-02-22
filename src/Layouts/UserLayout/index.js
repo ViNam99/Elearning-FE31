@@ -7,7 +7,7 @@ const UserLayout = (props) => {
        <>   
         <HeaderComponent/>
         <NavbarComponent/>
-            {props.chilren}
+            {props.children}
        </>
     )
 }
