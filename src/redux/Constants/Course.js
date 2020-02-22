@@ -1,0 +1,6 @@
+export const FETCH_COURSES = "FETCH_COURSES";
+export const FETCH_COURSE_DETAIL = "FETCH_COURSE_DETAIL";
+export const ADD_COURSE = "ADD_COURSE";
+export const DELLETE_COURSE = "DELLETE_COURSE";
+export const REPAIR_COURSE = "REPAIR_COURSE";
+    

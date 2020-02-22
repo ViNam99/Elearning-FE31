@@ -1,0 +1,1 @@
+export const FETCH_CREDENTIAL ='FETCH_CREDENTIAL';

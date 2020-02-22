@@ -1,13 +1,10 @@
-import React from "react";
-import "./assets/styles/main.scss";
+import React from 'react'
 
-import HomeComponent from "./Components/HomeComponent";
 const App = () => {
   return (
     <div>
-      <HomeComponent />
+      
     </div>
-  );
-};
-
-export default App;
+  )
+}
+export default App
