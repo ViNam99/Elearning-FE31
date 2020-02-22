@@ -1,0 +1,19 @@
+.header {
+  padding: $padding-0 0;
+  background-color: $color-blue;
+  &__content {
+    p {
+      @include styleText(
+        $color-white,
+        $default-font-size,
+        $default-font-weight
+      );
+      .icon {
+        margin-right: $margin-rignt-0;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

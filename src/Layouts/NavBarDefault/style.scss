@@ -1,0 +1,29 @@
+.nav {
+  width: 73%;
+  margin: 0 auto;
+  padding: 30px 0 !important;
+  .collapse {
+    justify-content: flex-end;
+    .navbar-nav {
+      @include styleText($color-black, $font-size-0, $font-weight-bold);
+      .nav-item {
+        margin: 0 $margin-0 !important;
+      }
+      .nav-link {
+        &::after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 0;
+          background: $color-blue-1;
+          transition: all 0.5s;
+          margin-top: 1px;
+        }
+        &:hover::after,
+        &:focus::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
