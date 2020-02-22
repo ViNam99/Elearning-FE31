@@ -1,11 +1,12 @@
+//Bootstrap apply here
+@import '~bootstrap/scss/bootstrap.scss';
 // Helper apply here
 @import "../styles/Helper/variable.scss";
 @import "../styles/Base/customize.scss";
 //Base apply here
 @import "../styles/Base/reset.scss";
 @import "../styles/Base/customize.scss";
+//Layout apply here
+@import "../../Layouts/FooterDefault/style.scss";
 //Component apply here
 //HomeComponent
-@import "../../Components/HomeComponent/style.scss";
-//FooterComponent
-@import "../../Components//Footer/footer.scss";
