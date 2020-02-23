@@ -28,3 +28,22 @@
   border-radius: $border-radius;
   line-height: $line-height;
 }
+@mixin styleInput(
+  $width,
+  $height,
+  $border,
+  $color,
+  $background,
+  $boder-radius,
+  $out-line,
+  $box-shadow
+) {
+  width: $width;
+  height: $height;
+  border: $border;
+  color: $color;
+  background: $background;
+  border-radius: $boder-radius;
+  outline: $out-line;
+  box-shadow: $box-shadow;
+}
