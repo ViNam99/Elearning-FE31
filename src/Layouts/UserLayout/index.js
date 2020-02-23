@@ -1,12 +1,14 @@
 import React from 'react'
-import HeaderLayout from '../HeaderDefault'
+import HeaderComponent from '../HeaderDefault'
+import NavbarComponent from '../NavBarDefault'
 
-const UserLayout = ({...props}) => {
+const UserLayout = (props) => {
     return (
-        <>
-        <HeaderLayout/>
-            {props.children}   
-        </>
+       <>   
+        <HeaderComponent/>
+        <NavbarComponent/>
+            {props.children}
+       </>
     )
 }
 

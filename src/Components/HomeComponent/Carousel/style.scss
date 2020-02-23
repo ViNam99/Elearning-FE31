@@ -1,0 +1,46 @@
+.slider {
+  position: relative;
+  &__bgdark {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__caption {
+    width: 50%;
+  }
+  &__paragraph {
+    width: 100%;
+    h4 {
+      @include styleText($color-white, $font-size-1, $font-weight-0);
+    }
+    h2 {
+      @include styleText($color-white, $font-size-2, $font-weight-0);
+      margin: 22px 0 $margin-bottom-0 0;
+    }
+    p {
+      @include styleText($color-white, $default-font-size, $font-weight-0);
+      margin-bottom: $margin-bottom-0;
+    }
+  }
+  &__btn1 {
+    color: $color-white;
+    @include styleButton($color-blue, $color-blue, 10px, 60px, 10px);
+    transition: all 0.5s;
+    &:hover {
+      color: $color-blue;
+      @include styleButton($color-white, $color-blue, 10px, 60px, 10px);
+    }
+  }
+  &__btn2 {
+    color: $color-blue;
+    @include styleButton(transparent, $color-blue, 10px, 60px, 10px);
+    transition: all 0.5s;
+    &:hover {
+      color: $color-white;
+      @include styleButton($color-blue, $color-blue, 10px, 60px, 10px);
+    }
+  }
+}
