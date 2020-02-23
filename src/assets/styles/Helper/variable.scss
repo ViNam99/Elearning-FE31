@@ -3,7 +3,8 @@ $default-color-black: rgba(0, 0, 0, 0.6);
 $color-blue: #6664d4;
 $color-white: white;
 $color-black: #222222;
-$color-blue-1:#337ab7;
+$color-black-1: #151515;
+$color-blue-1: #337ab7;
 //variable font weight
 $default-font-weight: normal;
 $font-weight-bold: bold;
@@ -13,10 +14,21 @@ $default-font-size: 16px;
 $font-size-0: 18px;
 $font-size-1: 24px;
 $font-size-2: 62px;
+$font-size-3: 40px;
+$font-size-4: 21px;
 //variable padding
+$default-padding: 30px;
 $padding-0: 15px;
 $padding-1: 11px;
+$padding-top-bottom: 0px;
+$padding-left-right: 40px;
 //variable margin
 $margin-rignt-0: 8px;
 $margin-0: 20px;
-$margin-bottom-0 :45px
+$margin-bottom-0: 45px;
+$margin-top-0: 45px;
+$margin-top-1: 30px;
+//variable borderRadius
+$border-radius-0: 20px;
+//variable lineHeight
+$line-height-0: 48px;

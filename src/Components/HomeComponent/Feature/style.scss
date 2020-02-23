@@ -1,0 +1,42 @@
+.feature {
+  padding-top: 120px;
+  &__paragraph {
+    h2 {
+      @include styleText($color-black-1, $font-size-3, $font-weight-0);
+      margin-top: $margin-top-0;
+    }
+    div {
+      @include styleText($color-black-1, $font-size-4, $default-font-weight);
+      padding: 35px 0 30px 0;
+      color: $color-blue;
+    }
+    p {
+      @include styleText($color-black-1, $font-size-0, $default-font-weight);
+      line-height: 32px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  &__btn {
+    @include styleButton(
+      $color-blue,
+      $color-blue,
+      $padding-top-bottom,
+      $padding-left-right,
+      $border-radius-0
+    );
+    @include styleText($color-white, $font-size-0, $default-font-weight);
+    line-height: $line-height-0;
+    transition: all 0.5s;
+    margin-top: $margin-top-1;
+    &:hover {
+      @include styleButton(
+        $color-white,
+        $color-blue,
+        $padding-top-bottom,
+        $padding-left-right,
+        $border-radius-0
+      );
+      @include styleText($color-blue, $font-size-0, $default-font-weight);
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CarouselComponent from "../../Components/HomeComponent/Carousel";
+import FeatureComponent from "../../Components/HomeComponent/Feature";
 const HomePage = () => {
   return (
-    <Container fluid="true">
-      <Row>
-        <CarouselComponent />
-      </Row>
+    <Container fluid="true" className="p-0">
+      <CarouselComponent />
+      <FeatureComponent />
     </Container>
   );
 };
