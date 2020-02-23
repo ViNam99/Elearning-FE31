@@ -1,10 +1,12 @@
 import React from 'react';
-import Breadcrums from './Breadcrums';
+import Breadcrumb from './Breadcrums';
+import FeatureCourse from './FeatureCourse';
 
 const MainAbout = () => {
     return (
         <div>
-            <Breadcrums/>
+            <Breadcrumb/>
+            <FeatureCourse/>
         </div>
     );
 };
