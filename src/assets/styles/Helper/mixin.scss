@@ -4,11 +4,11 @@
   font-weight: $fw;
 }
 
-// @mixin styleHover($bg-color, $boder-color, $color) {
-//     background-color: $bg-color;
-//     border: $bd-0 solid $boder-color;
-//     color: $color;
-// }
+@mixin styleHover($bg-color, $boder-color, $color) {
+  background-color: $bg-color;
+  border: 1px solid $boder-color;
+  color: $color;
+}
 
 @mixin styleButton(
   $bg-color,
@@ -21,4 +21,10 @@
   border: 1px solid $border-color;
   padding: $pd-top-bottom $pd-left-right;
   border-radius: $bd-rad;
+}
+@mixin styleCircle($width, $height, $border-radius, $line-height) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  line-height: $line-height;
 }

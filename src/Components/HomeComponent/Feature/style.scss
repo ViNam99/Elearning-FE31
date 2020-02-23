@@ -39,4 +39,46 @@
       @include styleText($color-blue, $font-size-0, $default-font-weight);
     }
   }
+  &__block {
+    margin-top: 125px;
+    &:hover {
+      .feature__block__wraper__icon svg {
+        @include styleHover(none ,none, $color-white);
+        transform: translateX(-26px);
+      }
+      .feature__block__wraper__icon {
+        @include styleHover($color-blue, none, none);
+      }
+      h5 {
+        @include styleHover(none, none, $color-blue);
+      }
+    }
+    &__wraper {
+      position: relative;
+      padding: 25px 0 0 115px;
+      &__icon {
+        @include styleCircle(85px, 85px, 50%, 85px); 
+        background: #dcdada;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+        svg {
+          font-size: 55px;
+          margin-left: 40px;
+          display: block;
+          transition: all 0.5s;
+          margin-top: $margin-0 - 5;
+        }
+      }
+    }
+    h5 {
+      @include styleText($color-black, $font-size-4 + 1, $font-weight-0);
+      transition: all 0.5s;
+    }
+    p {
+      line-height: $line-height-1;
+      padding-top: $padding-top-0;
+    }
+  }
 }
