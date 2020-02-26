@@ -1,0 +1,20 @@
+.course {
+  margin-top: 120px;
+  &__content {
+    h2 {
+      @include styleText($color-black-1, $font-size-5, $font-weight-0);
+      padding-bottom: 25px;
+    }
+    &__icon {
+      font-size: $font-size-3 + 10;
+      color: $color-blue;
+      border-top: 2px solid $color-black-1;
+      padding-top: $padding-0;
+    }
+    p {
+      padding: $padding-top-0 0;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
