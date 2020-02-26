@@ -6,7 +6,7 @@ import { Container } from 'reactstrap';
 
 const Contact = () => {
     return (
-        <div style={{backgroundColor:"#f4f4f4"}}>
+        <div style={{backgroundColor:"#f4f4f4", padding:"80px"}}>
         <Container>
             <Breadcrumbs/>
             <GoogleMap/>
