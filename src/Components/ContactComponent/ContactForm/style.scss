@@ -1,0 +1,26 @@
+.contact-form{
+    &__theme-form{
+        background: $color-white;
+    padding: 55px 35px 70px 50px;
+    border-left: 1px solid $color-blue;
+    }
+    &__contact-address{
+        background: #fff;
+    padding: 50px 30px 35px 35px;
+    margin-top: 235px;
+    li{
+        position: relative;
+        padding: 0 0 30px 55px;
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #b7b6b6;
+            font-size: $font-size-1;
+        }
+    }
+    .list-group-item{
+        border:none;
+    }
+    }
+}

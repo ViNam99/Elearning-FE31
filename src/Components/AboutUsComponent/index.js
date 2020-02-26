@@ -3,7 +3,7 @@ import Breadcrumb from './Breadcrums';
 import FeatureCourse from './FeatureCourse';
 import CountUpStudent from './CountUpStudent';
 import LinktoContact from './LinktoContact';
-import CountRequest from './CourseRequest';
+import ClientSlider from './ClientSlider';
 
 const MainAbout = () => {
     return (
@@ -12,7 +12,7 @@ const MainAbout = () => {
             <FeatureCourse/>
             <CountUpStudent/>
             <LinktoContact/>
-            <CountRequest/>
+            {/* <ClientSlider/> */}
         </div>
     );
 };
