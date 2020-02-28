@@ -1,5 +1,5 @@
 //action creator
-export default createAction = (type, data) => ({
+export const createAction = (type, data) => ({
   type,
   data
 });
