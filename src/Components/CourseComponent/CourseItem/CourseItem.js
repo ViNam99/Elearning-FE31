@@ -38,7 +38,42 @@ const CourseItem = () => {
     autoplay: true,
     speed: 5000,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
+    arrows: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          infinite: true,
+          slidesToShow: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          infinite: true,
+          slidesToShow: 1
+        }
+      }
+    ]
   };
   return (
     <div className={prefix}>
