@@ -1,0 +1,65 @@
+.review {
+  margin-top: 120px;
+  background: url("/images/2.jpg") no-repeat center top;
+  background-attachment: fixed;
+  position: relative;
+  &__content {
+    text-align: center;
+    padding: 50px;
+    color: black !important;
+    font-weight: 500;
+    &__paragraph {
+      h2 {
+        @include styleText($color-white, $font-size-5, $font-weight-0);
+        padding-bottom: 25px;
+      }
+      &__icon {
+        font-size: $font-size-3 + 10;
+        color: $color-blue;
+        border-top: 2px solid $color-black-1;
+        padding-top: $padding-0;
+      }
+      p {
+        padding-top: $padding-top-0;
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+    &__review {
+      &__item {
+        position: relative;
+        padding: 100px $padding-2;
+        img {
+          border-radius: 50%;
+          text-align: center;
+          @include stylePosition(absolute, none, none, 25px, 27%, 75px, 75px);
+        }
+        p {
+          position: relative;
+          &:first-child {
+            border-radius: 10px;
+            width: 100%;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.18);
+            padding: $padding-2;
+            &:after {
+              content: "";
+              border-top: 9px solid rgba(255, 255, 255, 0.18);
+              border-right: 9px solid transparent;
+              border-left: 9px solid transparent;
+              transform: rotate(0deg);
+              @include stylePosition(absolute, 100%, none, none, 30%, 0, 0);
+            }
+          }
+          &:last-child {
+            @include stylePosition(absolute, none, none, 25px, 45%, none, none);
+          }
+        }
+      }
+    }
+  }
+  &__bgdark {
+    background-color: rgba(0, 0, 0, 0.15);
+    @include stylePosition(absolute, 0, none, none, 0, 100%, 100%);
+  }
+}
