@@ -1,0 +1,135 @@
+.footer {
+  padding: $pd-footer;
+  background-color: $bg-color;
+  &__content {
+    width: 1200px;
+    .top-footer {
+      margin-bottom: $mg-3;
+      h6 {
+        color: $color-white;
+        position: $pos-rel;
+        margin-bottom: $mg-3;
+        display: $dis-in-bl;
+        font-size: $font-size-1;
+        font-weight: normal;
+        &::before {
+          content: "";
+          width: 35px;
+          height: 1px;
+          position: $pos-abs;
+          bottom: 3px;
+          right: -45px;
+          background: $color-blue;
+        }
+      }
+      .list-group {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .footer-list {
+        .row {
+          .list-group-item {
+            background-color: $bg-color;
+            padding: 0.5rem 0.5rem;
+            a {
+              @include styleTextList(
+                $color-text,
+                1.42857143,
+                $dis-in-bl,
+                $font-size-0
+              );
+              cursor: pointer;
+              text-decoration: none;
+              &:hover {
+                color: $color-blue;
+                transition: all 0.5s;
+              }
+            }
+          }
+        }
+      }
+      .footer-logo-widget {
+        text-align: center;
+        .wrapper {
+          padding: 0 85px;
+          p {
+            color: $color-text;
+            padding: 35px 0 45px 0;
+            line-height: $font-size-2;
+            font-size: 15px;
+          }
+          .list-group {
+            text-align: left;
+            margin-left: $mg-4;
+            padding-left: $pd-0;
+            position: $pos-rel;
+            &::before {
+              content: "";
+              width: 1px;
+              height: 85%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: $color-blue;
+            }
+            .list-group-item {
+              color: $color-text;
+              position: $pos-rel;
+              padding: 0 0 20px 45px;
+              background-color: $bg-color;
+              svg {
+                position: $pos-abs;
+                left: 0;
+                top: 0;
+                color: #4f4d4d;
+                font-size: $font-size-1;
+              }
+            }
+          }
+        }
+      }
+      .footer-news {
+        .list-group-item {
+          border-bottom: 1px solid $color-black;
+          padding-bottom: $pd-2;
+          margin-bottom: $mg-2;
+          background-color: $bg-color;
+          cursor: pointer;
+          a {
+            font-size: $font-size-0;
+            line-height: $font-size-1;
+            color: $color-white;
+            padding-bottom: $mg-0;
+            text-decoration: none;
+
+            &:hover {
+              transition: all 0.5s;
+              color: $color-blue;
+              width: 0;
+            }
+          }
+          .date {
+            font-size: $font-size-sm;
+            color: $color-text;
+          }
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    background: $bg-color;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: $mg-2;
+    p {
+      font-size: $font-size-0;
+      color: $color-text;
+      line-height: $font-size-2;
+      a {
+        color: $color-blue;
+        text-decoration: none;
+      }
+    }
+  }
+}

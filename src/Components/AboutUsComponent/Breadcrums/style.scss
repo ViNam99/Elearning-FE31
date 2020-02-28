@@ -1,0 +1,32 @@
+.breadcr{
+    &__opacity{
+        background: $color-super-black;
+        padding: 200px 0 130px 0;
+        .breadcrumb{
+            display: $dis-in-bl;
+            background-color: rgba(1,1,14,0.01);
+        }
+        .breadcrumb-item{
+            font-family: 'Noto Sans', sans-serif;
+            text-transform: capitalize;
+            font-size: $font-size-1;
+            color: $color-white;
+            margin: 0 3px;
+            display: $dis-in-bl;
+            background-color: none;
+            a{
+                text-decoration: none;
+                color:white;
+                &:hover{
+                    color:$color-blue;
+                    transition: all 0.5s;
+                }
+            }
+        }
+        h1{
+            font-size: $font-size-4;
+            color: $color-white;
+            padding-top: $pd-2;
+        }
+    }
+}

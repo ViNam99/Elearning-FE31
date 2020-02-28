@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { Container } from "react-bootstrap";
 import CarouselComponent from "../../Components/HomeComponent/Carousel";
@@ -18,3 +19,16 @@ const HomePage = () => {
 };
 
 export default HomePage;
+=======
+import React from 'react';
+
+const HomePage = () => {
+    return (
+        <div>
+            
+        </div>
+    );
+};
+
+export default HomePage;
+>>>>>>> duy

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @mixin styleText($color, $fs, $fw) {
   color: $color;
   font-size: $fs;
@@ -56,3 +57,11 @@
   width: $width;
   height: $height;
 }
+=======
+@mixin styleTextList($color, $line, $dis, $fs){
+    color:$color;
+    line-height: $line;
+    display: $dis;
+    font-size: $fs;
+}
+>>>>>>> duy

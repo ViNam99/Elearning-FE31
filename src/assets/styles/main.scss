@@ -1,3 +1,5 @@
+//Bootstrap apply here
+@import '~bootstrap/scss/bootstrap.scss';
 // Helper apply here
 @import "../styles/Helper/variable.scss";
 @import "../styles/Helper/mixin.scss";
@@ -5,6 +7,7 @@
 @import "../styles/Base/reset.scss";
 @import "../styles/Base/customize.scss";
 //Layout apply here
+<<<<<<< HEAD
 @import "../../Layouts/HeaderDefault/style.scss";
 @import "../../Layouts/NavBarDefault/style.scss";
 //Component apply here
@@ -20,3 +23,17 @@
 @import "../../Components/CourseComponent/CourseItem/style.scss";
 //Review
 @import "../../Components/HomeComponent/Review/style.scss";
+=======
+@import "../../Layouts/FooterDefault/style.scss";
+//Component apply here
+//HomeComponent
+//AboutUsComponent 
+@import "../../Components/AboutUsComponent/Breadcrums/style.scss";
+@import "../../Components/AboutUsComponent/FeatureCourse/style.scss";
+@import "../../Components/AboutUsComponent/CountUpStudent/style.scss";
+@import "../../Components/AboutUsComponent/LinktoContact/style.scss";
+@import "../../Components/AboutUsComponent/ClientSlider/style.scss";
+//ContactComponent
+@import "../../Components/ContactComponent/GoogleMap/style.scss";
+@import "../../Components/ContactComponent/ContactForm/style.scss";
+>>>>>>> duy
