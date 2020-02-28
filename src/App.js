@@ -6,8 +6,8 @@ import Contact from "./Components/ContactComponent";
 const App = () => {
   return (
     <div>
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </div>
     // hi
   );
