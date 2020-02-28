@@ -1,6 +1,11 @@
-export const FETCH_COURSES = "FETCH_COURSES";
-export const FETCH_COURSE_DETAIL = "FETCH_COURSE_DETAIL";
-export const ADD_COURSE = "ADD_COURSE";
-export const DELLETE_COURSE = "DELLETE_COURSE";
-export const REPAIR_COURSE = "REPAIR_COURSE";
-    
+const createRequestTypes = (base, act) =>
+  ["REQUEST", "SUCCESS", "FAILURE"].reduce((acc, type) => {
+    const key = `${act}_${type}`;
+    acc[key] = `${base}_${act}_${type}`;
+    return acc;
+  }, {});
+
+const COURSES_TYPE = {
+  ...createRequestTypes("COURSES", "FETCH_LIST")
+};
+export default COURSES_TYPE;

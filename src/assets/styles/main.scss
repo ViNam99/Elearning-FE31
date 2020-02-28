@@ -8,7 +8,19 @@
 @import "../../Layouts/HeaderDefault/style.scss";
 @import "../../Layouts/NavBarDefault/style.scss";
 //Component apply here
-//CarouselComponent
-@import "../../Components/HomeComponent/Carousel/style.scss"
 //HomeComponent
+<<<<<<< HEAD
 
+=======
+//Carousel
+@import "../../Components/HomeComponent/Carousel/style.scss";
+//Feature
+@import "../../Components/HomeComponent/Feature/style.scss";
+//Search
+@import "../../Layouts/SearchDefault/style.scss";
+//Course
+@import "../../Components/CourseComponent/style.scss";
+@import "../../Components/CourseComponent/CourseItem/style.scss";
+//Review
+@import "../../Components/HomeComponent/Review/style.scss";
+>>>>>>> NamDev
