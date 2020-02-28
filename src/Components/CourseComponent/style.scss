@@ -1,6 +1,7 @@
 .course {
   margin-top: 120px;
   &__content {
+    text-align: center;
     h2 {
       @include styleText($color-black-1, $font-size-5, $font-weight-0);
       padding-bottom: 25px;
