@@ -1,26 +1,26 @@
 .review {
-  margin-top: 120px;
+  margin: $margin-7 0;
   background: url("/images/2.jpg") no-repeat center top;
   background-attachment: fixed;
   position: relative;
   &__content {
     text-align: center;
-    padding: 50px;
+    padding: $padding-5;
     color: black !important;
-    font-weight: 500;
+    font-weight: $font-weight-0 - 200;
     &__paragraph {
       h2 {
-        @include styleText($color-white, $font-size-5, $font-weight-0);
-        padding-bottom: 25px;
+        @include styleText($color-white-0, $font-size-2, $font-weight-0);
+        padding-bottom: $padding-3 - 5;
       }
       &__icon {
         font-size: $font-size-3 + 10;
-        color: $color-blue;
+        color: $color-blue-0;
         border-top: 2px solid $color-black-1;
-        padding-top: $padding-0;
+        padding-top: $padding-1;
       }
       p {
-        padding-top: $padding-top-0;
+        padding-top: $padding-4;
         width: 60%;
         margin: 0 auto;
       }
@@ -28,7 +28,7 @@
     &__review {
       &__item {
         position: relative;
-        padding: 100px $padding-2;
+        padding: $padding-6 $padding-5;
         img {
           border-radius: 50%;
           text-align: center;
@@ -40,11 +40,11 @@
             border-radius: 10px;
             width: 100%;
             text-align: left;
-            background-color: rgba(255, 255, 255, 0.18);
-            padding: $padding-2;
+            background-color: $color-gray-2;
+            padding: $padding-5;
             &:after {
               content: "";
-              border-top: 9px solid rgba(255, 255, 255, 0.18);
+              border-top: 9px solid $color-gray-2;
               border-right: 9px solid transparent;
               border-left: 9px solid transparent;
               transform: rotate(0deg);

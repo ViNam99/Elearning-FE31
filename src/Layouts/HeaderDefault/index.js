@@ -7,8 +7,10 @@ import {
   faCartArrowDown,
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
+import { classPrefixor } from "../../Utils/classPrefixor";
 const HeaderComponent = () => {
   const prefix = "header";
+  const c = classPrefixor(prefix);
   return (
     <header className={prefix}>
       <Container className={`${prefix}__content`}>

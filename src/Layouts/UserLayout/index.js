@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderComponent from '../HeaderDefault'
 import NavbarComponent from '../NavBarDefault'
+import FooterComponent from '../FooterDefault'
 
 const UserLayout = (props) => {
     return (
@@ -8,6 +9,7 @@ const UserLayout = (props) => {
         <HeaderComponent/>
         <NavbarComponent/>
             {props.children}
+        <FooterComponent/>
        </>
     )
 }

@@ -1,25 +1,26 @@
 .footer {
-  padding: $pd-footer;
-  background-color: $bg-color;
+  padding-top: $padding-6;
+  background-color: $color-black-3;
+  margin-top: $margin-7;
   &__content {
     width: 1200px;
     .top-footer {
-      margin-bottom: $mg-3;
+      margin-bottom: $margin-4 - 5;
       h6 {
-        color: $color-white;
-        position: $pos-rel;
-        margin-bottom: $mg-3;
-        display: $dis-in-bl;
-        font-size: $font-size-1;
+        color: $color-white-0;
+        position: relative;
+        margin-bottom: $margin-4 - 5;
+        display: inline-block;
+        font-size: $font-size-0 + 2;
         font-weight: normal;
         &::before {
           content: "";
           width: 35px;
           height: 1px;
-          position: $pos-abs;
+          position: absolute;
           bottom: 3px;
           right: -45px;
-          background: $color-blue;
+          background: $color-blue-0;
         }
       }
       .list-group {
@@ -30,19 +31,19 @@
       .footer-list {
         .row {
           .list-group-item {
-            background-color: $bg-color;
+            background-color: $color-black-3;
             padding: 0.5rem 0.5rem;
             a {
               @include styleTextList(
-                $color-text,
+                $color-gray-1,
                 1.42857143,
-                $dis-in-bl,
+                inline-block,
                 $font-size-0
               );
               cursor: pointer;
               text-decoration: none;
               &:hover {
-                color: $color-blue;
+                color: $color-blue-0;
                 transition: all 0.5s;
               }
             }
@@ -54,16 +55,16 @@
         .wrapper {
           padding: 0 85px;
           p {
-            color: $color-text;
+            color: $color-gray-1;
             padding: 35px 0 45px 0;
-            line-height: $font-size-2;
+            line-height: $font-size-2 - 6;
             font-size: 15px;
           }
           .list-group {
             text-align: left;
-            margin-left: $mg-4;
-            padding-left: $pd-0;
-            position: $pos-rel;
+            margin-left: $margin-5;
+            padding-left: $padding-1;
+            position: relative;
             &::before {
               content: "";
               width: 1px;
@@ -71,19 +72,19 @@
               position: absolute;
               top: 0;
               left: 0;
-              background: $color-blue;
+              background: $color-blue-0;
             }
             .list-group-item {
-              color: $color-text;
-              position: $pos-rel;
+              color: $color-gray-1;
+              position: relative;
               padding: 0 0 20px 45px;
-              background-color: $bg-color;
+              background-color: $color-black-3;
               svg {
-                position: $pos-abs;
+                position: absolute;
                 left: 0;
                 top: 0;
                 color: #4f4d4d;
-                font-size: $font-size-1;
+                font-size: $font-size-0 + 2;
               }
             }
           }
@@ -91,43 +92,43 @@
       }
       .footer-news {
         .list-group-item {
-          border-bottom: 1px solid $color-black;
-          padding-bottom: $pd-2;
-          margin-bottom: $mg-2;
-          background-color: $bg-color;
+          border-bottom: 1px solid $color-black-0;
+          padding-bottom: $padding-3;
+          margin-bottom: $margin-3;
+          background-color: $color-black-3;
           cursor: pointer;
           a {
             font-size: $font-size-0;
-            line-height: $font-size-1;
-            color: $color-white;
-            padding-bottom: $mg-0;
+            line-height: $font-size-0 + 2;
+            color: $color-white-0;
+            padding-bottom: $margin-1 + 2 ;
             text-decoration: none;
 
             &:hover {
               transition: all 0.5s;
-              color: $color-blue;
+              color: $color-blue-0;
               width: 0;
             }
           }
           .date {
-            font-size: $font-size-sm;
-            color: $color-text;
+            font-size: 13px;
+            color: $color-gray-1;
           }
         }
       }
     }
   }
   .bottom-footer {
-    background: $bg-color;
+    background: $color-black-3;
     text-align: center;
     padding: 15px 0;
-    margin-top: $mg-2;
+    margin-top: $margin-3;
     p {
       font-size: $font-size-0;
-      color: $color-text;
-      line-height: $font-size-2;
+      color: $color-gray-1;
+      line-height: $font-size-2 - 6;
       a {
-        color: $color-blue;
+        color: $color-blue-0;
         text-decoration: none;
       }
     }

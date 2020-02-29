@@ -1,5 +1,6 @@
 .slider {
   position: relative;
+  margin: 0 !important;
   &__bgdark {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -14,33 +15,33 @@
   &__paragraph {
     width: 100%;
     h4 {
-      @include styleText($color-white, $font-size-1, $font-weight-0);
+      @include styleText($color-white-0, $font-size-1, $font-weight-0);
     }
     h2 {
-      @include styleText($color-white, $font-size-2, $font-weight-0);
-      margin: 22px 0 $margin-bottom-0 0;
+      @include styleText($color-white-0, $font-size-4, $font-weight-0);
+      margin: 22px 0 $margin-4 0;
     }
     p {
-      @include styleText($color-white, $default-font-size, $font-weight-0);
-      margin-bottom: $margin-bottom-0;
+      @include styleText($color-white-0, $default-font-size, $font-weight-0);
+      margin-bottom: $margin-4;
     }
   }
   &__btn1 {
-    color: $color-white;
-    @include styleButton($color-blue, $color-blue, 10px, 60px, 10px);
+    color: $color-white-0;
+    @include styleButton($color-blue-0, $color-blue-0, 10px, 60px, 10px);
     transition: all 0.5s;
     &:hover {
-      color: $color-blue;
-      @include styleButton($color-white, $color-blue, 10px, 60px, 10px);
+      color: $color-blue-0;
+      @include styleButton($color-white-0, $color-blue-0, 10px, 60px, 10px);
     }
   }
   &__btn2 {
-    color: $color-blue;
-    @include styleButton(transparent, $color-blue, 10px, 60px, 10px);
+    color: $color-blue-0;
+    @include styleButton(transparent, $color-blue-0, 10px, 60px, 10px);
     transition: all 0.5s;
     &:hover {
-      color: $color-white;
-      @include styleButton($color-blue, $color-blue, 10px, 60px, 10px);
+      color: $color-white-0;
+      @include styleButton($color-blue-0, $color-blue-0, 10px, 60px, 10px);
     }
   }
 }

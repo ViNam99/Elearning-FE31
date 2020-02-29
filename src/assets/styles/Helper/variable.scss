@@ -1,83 +1,60 @@
-<<<<<<< HEAD
-//variabl color
+//variable color
 $default-color-black: rgba(0, 0, 0, 0.6);
-$color-blue: #6664d4;
-$color-white: white;
-$color-black: #222222;
+$color-black-0: #000000;
 $color-black-1: #151515;
+$color-black-2: #222222;
+$color-black-3: #161313;
+$color-super-black: rgba(1, 1, 14, 0.6);
+$color-white-0: white;
+$color-blue-0: #6664d4;
 $color-blue-1: #337ab7;
 $color-blue-2: #a9a8eb;
 $color-blue-3: #5c5bc2;
+$color-gray-1: rgba(255, 255, 255, 0.6);
+$color-gray-2: rgba(255, 255, 255, 0.18);
+
 //variable font weight
 $default-font-weight: normal;
 $font-weight-bold: bold;
 $font-weight-0: 700;
+
 //variable font size
 $default-font-size: 16px;
 $font-size-0: 18px;
 $font-size-1: 24px;
-$font-size-2: 62px;
+$font-size-2: 36px;
 $font-size-3: 40px;
-$font-size-4: 21px;
-$font-size-5: 36px;
+$font-size-4: 62px;
+$font-size-5: 56px;
+$font-size-sm: 13px;
+
 //variable padding
-$default-padding: 30px;
-$padding-0: 15px;
-$padding-1: 11px;
-$padding-2: 50px;
-$padding-top-bottom: 0px;
-$padding-left-right: 40px;
-$padding-top-0: 35px;
+$padding-0: 0px;
+$padding-1: 15px;
+$padding-2: 20px;
+$padding-3: 30px;
+$padding-4: 35px;
+$padding-5: 50px;
+$padding-6: 100px;
+$padding-7: 120px;
+
 //variable margin
-$margin-rignt-0: 8px;
-$margin-0: 20px;
-$margin-bottom-0: 45px;
-$margin-bottom-1: 60px;
-$margin-top-0: 45px;
-$margin-top-1: 30px;
-$margin-top-2: 60px;
+$margin-0: 0px;
+$margin-1: 8px;
+$margin-2: 20px;
+$margin-3: 30px;
+$margin-4: 45px;
+$margin-5: 50px;
+$margin-6: 60px;
+$margin-7: 120px;
 
 //variable borderRadius
 $border-radius-0: 20px;
+$border-radius-1: 10px;
+
 //variable lineHeight
 $line-height-0: 48px;
 $line-height-1: 26px;
-=======
-//Font-size
-$font-size-sm:13px;
-$font-size-0:16px;
-$font-size-1:20px;
-$font-size-2:30px;
-$font-size-3:40px;
-$font-size-4:50px;
-$font-size-5:56px;
+
 // Border
-$border-size-0:1px;
-//background color Footer
-$bg-color:#161313;
-//margin
-$mg-0:10px;
-$mg-1:20px;
-$mg-2:30px;
-$mg-3:40px;
-$mg-4:50px;
-//padding 
-$pd-footer:100px 0 0 0;
-$pd-0:15px;
-$pd-1:20px;
-$pd-2:30px;
-$pd-3:40px;
-$pd-4:50px;
-//Color
-$color-blue:#6664d4;
-$color-white:#fff;
-$color-text:rgba(255,255,255,0.6);
-$color-black:#000000;
-$color-super-black:rgba(1,1,14,0.6);
-//position
-$pos-abs:absolute;
-$pos-rel:relative;
-//display
-$dis-bl:block;
-$dis-in-bl:inline-block;
->>>>>>> duy
+$border-size-0: 1px;

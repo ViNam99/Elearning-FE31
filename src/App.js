@@ -1,20 +1,20 @@
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import UserLayout from "./Layouts/UserLayout";
+import HomePage from "./Pages/HomePage";
+import "./assets/styles/main.scss";
 
-import React from 'react';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import UserLayout from './Layouts/UserLayout';
-import HomePage from './Pages/HomePage';
-import './assets/styles/main.scss';
 const App = () => {
   return (
-   <BrowserRouter>
+    <BrowserRouter>
       <Switch>
-        <UserLayout path='/'>
+        <UserLayout path="/">
           <Switch>
-          <Route path='/' component ={HomePage}/>
+            <Route path="/" component={HomePage} />
           </Switch>
         </UserLayout>
       </Switch>
-   </BrowserRouter>
-  )
-}
-export default App
+    </BrowserRouter>
+  );
+};
+export default App;

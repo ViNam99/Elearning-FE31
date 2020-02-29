@@ -1,82 +1,85 @@
-.countupstudent{
-    font-family: 'Source Sans Pro', sans-serif;
-    color: rgba(0,0,0,0.6);
-    font-size: 16px;
-    h5{
-        padding: 50px 0 30px 0;
-        font-size: $font-size-1;
-        font-weight: 700;
-        color: $color-black;
+.countupstudent {
+  //   font-family: "Source Sans Pro", sans-serif;
+  //   color: rgba(0, 0, 0, 0.6);
+  //   font-size: 16px;
+  h5 {
+    padding: $padding-5 0 $padding-3 0;
+    font-size: $font-size-1 - 4;
+    font-weight: $font-weight-0;
+    color: $color-black-2;
+  }
+  p {
+    line-height: $font-size-2 - 6;
+    text-align: justify;
+  }
+  a {
+    font-size: $default-font-size;
+    font-weight: $font-weight-0 - 100;
+    color: $color-black-2;
+    margin-top: $margin-5;
+    text-decoration: none;
+    svg {
+      margin-left: $margin-1 + 2;
+      color: $color-blue-0;
+      font-size: $font-size-sm;
     }
-    p{
-        line-height: $font-size-2;
-        text-align: justify;
+    &:hover {
+      color: $color-blue-0;
+      transition: all 0.5s;
     }
-    a{
-        font-size: $font-size-0;
-        font-weight: 600;
-        color: $color-black;
-        margin-top: $mg-4;
-        text-decoration: none;
-        svg{
-            margin-left: $mg-0;
-            color: $color-blue;
-            font-size: $font-size-sm;
+  }
+  &__our-anal {
+    margin-top: $margin-7;
+    .analytics-chart {
+      text-align: center;
+      margin-bottom: $margin-3;
+      .piechart {
+        position: relative;
+        canvas {
+          display: block;
+          margin: 0 auto;
+          border: 2px solid $color-blue-0;
+          border-radius: 50%;
         }
-        &:hover{
-            color: $color-blue;
-            transition: all 0.5s;
+        span {
+          font-family: "Noto Sans", sans-serif;
+          font-weight: $font-weight-0;
+          color: $color-black-2;
+          font-size: $font-size-1 - 4;
+          line-height: 166px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          &::after {
+            content: "%";
+          }
         }
+        .number {
+          position: absolute;
+          width: 166px;
+          height: 166px;
+          border-radius: 50%;
+          left: 92px;
+          top: 2px;
+          z-index: 1;
+          opacity: 0;
+          transform: translateY(0);
+          background: linear-gradient(
+            rgba(0, 0, 0, 0) 1%,
+            rgba(102, 100, 212, 0.8) 50%,
+            rgba(102, 100, 212, 0.8) 100%
+          );
+        }
+      }
+      &:hover {
+        .number {
+          opacity: 1;
+          transform: translateY(0);
+          transition: all 0.5s;
+        }
+      }
     }
-    &__our-anal{
-        margin-top: 110px;
-        .analytics-chart{
-        text-align: center;
-        margin-bottom: $mg-2;
-        .piechart{
-            position: $pos-rel;
-            canvas{
-                display: $dis-bl;
-                margin: 0 auto;
-                border: 2px solid $color-blue;
-                border-radius: 50%;
-            }
-            span{
-                font-family: 'Noto Sans', sans-serif;
-                font-weight: 700;
-                color: $color-black;
-                font-size: $font-size-1;
-                line-height: 166px;
-                 position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                text-align: center;
-                &::after{
-                    content: "%";
-                }
-            }
-            .number{
-            position: $pos-abs;
-            width: 166px;
-            height: 166px;
-            border-radius: 50%;
-            left:92px;
-            top: 2px;
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(0);
-            background: linear-gradient( rgba(0,0,0,0.0) 1%, rgba(102,100,212,0.8) 50%, rgba(102,100,212,0.8) 100%,);
-            }
-        }
-        &:hover{
-            .number{
-                opacity: 1;
-                transform: translateY(0);
-                transition: all 0.5s ;
-            }
-        }
-    }
-  
-}
+  }
 }

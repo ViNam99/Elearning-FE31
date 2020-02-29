@@ -1,34 +1,34 @@
-.banner{
-        &__opacity{
-            background: $color-super-black;
-            padding: 90px 0 130px 0;
-            h6{
-                font-size: $font-size-1;
-                color: $color-white;
-            }
-            .btn{
-                width: 160px;
-                margin-left: $mg-0;
-                border-radius: 10px;
-                a{
-                    color: $color-white;
-                    text-decoration: none;
-                }
-                &:hover{
-                    background-color: white;
-                    a{
-                        color: $color-blue;
-                    }
-                }
-            }
-            .getfreecourse{
-                border: 1px solid $color-blue;
-                &:hover{
-                    background-color: $color-blue;
-                    a{
-                        color: $color-white;
-                    }
-                }
-            }
+.banner {
+  &__opacity {
+    background: $color-super-black;
+    padding: 90px 0 130px 0;
+    h6 {
+      font-size: $font-size-1 - 4;
+      color: $color-white-0;
+    }
+    .btn {
+      width: 160px;
+      margin-left: $margin-1 + 2;
+      border-radius: 10px;
+      a {
+        color: $color-white-0;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $color-white-0;
+        a {
+          color: $color-blue-0;
         }
+      }
+    }
+    .getfreecourse {
+      border: 1px solid $color-blue-0;
+      &:hover {
+        background-color: $color-blue-0;
+        a {
+          color: $color-white-0;
+        }
+      }
+    }
+  }
 }

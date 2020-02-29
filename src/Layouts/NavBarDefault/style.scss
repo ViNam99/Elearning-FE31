@@ -5,9 +5,9 @@
   .collapse {
     justify-content: flex-end;
     .navbar-nav {
-      @include styleText($color-black, $font-size-0, $font-weight-bold);
+      @include styleText($color-black-2, $font-size-0, $font-weight-bold);
       .nav-item {
-        margin: 0 $margin-0 !important;
+        margin: 0 $margin-2 !important;
       }
       .nav-link {
         &::after {
@@ -17,7 +17,7 @@
           width: 0;
           background: $color-blue-1;
           transition: all 0.5s;
-          margin-top: 1px;
+          margin-top: $margin-0 + 1;
         }
         &:hover::after,
         &:focus::after {

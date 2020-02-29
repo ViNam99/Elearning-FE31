@@ -1,7 +1,6 @@
-.slider{
-    margin-top:120px;
-    margin-bottom: 120px;
-    &__wrapper{
-        padding: 0 70px 0 120px;
-    }
+.slider {
+  margin: $margin-7 0;
+  &__wrapper {
+    padding: 0 70px 0 120px;
+  }
 }

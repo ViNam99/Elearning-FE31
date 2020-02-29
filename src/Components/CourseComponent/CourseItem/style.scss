@@ -5,7 +5,7 @@
     &:hover .card-title {
       transition: all 0.5s;
       @include styleText(
-        $color-blue !important,
+        $color-blue-0 !important,
         $font-size-1 !important,
         $font-weight-0 !important
       );
@@ -22,17 +22,17 @@
   }
   &__btn {
     @include styleButton(
-      $color-white,
-      $color-blue,
+      $color-white-0,
+      $color-blue-0,
       10px,
-      $padding-left-right,
+      $padding-4 + 5,
       $border-radius-0
     );
-    @include styleText($color-blue, $font-size-0, $default-font-weight);
-    margin-top: $margin-top-1;
+    @include styleText($color-blue-0, $font-size-0, $default-font-weight);
+    margin-top: $margin-3;
     &:hover {
       transition: all 0.5s;
-      @include styleHover($color-blue, $color-blue, $color-white);
+      @include styleHover($color-blue-0, $color-blue-0, $color-white-0);
     }
   }
 }

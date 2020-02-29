@@ -1,0 +1,56 @@
+.subscribe {
+  background-color: #f4f3f3;
+  padding: $padding-7 0;
+  &__title {
+    @include styleText($color-black-1, $font-size-1, $font-weight-0);
+    padding: $padding-1 $padding-0 $padding-1 $padding-5 + 20;
+  }
+  &__form {
+    input {
+      @include styleInput(
+        370px,
+        55px,
+        1px solid #f0ecec,
+        $color-black-1,
+        $color-white-0,
+        10px,
+        none,
+        none
+      );
+      &:focus {
+        @include styleInput(
+          370px,
+          55px,
+          1px solid #f0ecec,
+          $color-black-1,
+          $color-white-0,
+          $border-radius-1,
+          none,
+          none
+        );
+      }
+      margin-right: $margin-1;
+    }
+    button {
+      @include styleButton(
+        $color-blue-0,
+        $color-blue-0,
+        $padding-1,
+        $padding-4,
+        $border-radius-1
+      );
+      @include styleText($color-white-0, $font-size-0, $font-weight-0);
+      transition: all 0.5s;
+      &:hover {
+        @include styleButton(
+          $color-white-0,
+          $color-blue-0,
+          $padding-1,
+          $padding-4,
+          $border-radius-1
+        );
+        @include styleText($color-blue-0, $font-size-0, $font-weight-0);
+      }
+    }
+  }
+}
