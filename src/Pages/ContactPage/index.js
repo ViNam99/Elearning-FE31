@@ -1,10 +1,10 @@
 import React from "react";
-import GoogleMap from "./GoogleMap";
-import Breadcrumbs from "../AboutUsComponent/Breadcrums";
-import ContactForm from "./ContactForm";
+import GoogleMap from '../../Components/ContactComponent/GoogleMap';
+import Breadcrumbs from '../../Components/AboutUsComponent/Breadcrums';
+import ContactForm from '../../Components/ContactComponent/ContactForm'
 import { Container } from "reactstrap";
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <div style={{ backgroundColor: "#f4f4f4", padding: "80px" }}>
       <Container>
@@ -16,4 +16,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

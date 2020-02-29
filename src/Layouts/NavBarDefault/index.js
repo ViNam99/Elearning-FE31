@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import logo from "../../assets/img/logo.png";
+import { NavLink } from "react-router-dom";
 const NavbarComponent = () => {
   const prefix = "nav";
   return (
@@ -12,19 +13,24 @@ const NavbarComponent = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
           <Nav.Item>
-            <Nav.Link href="#home">HOME</Nav.Link>
+            <NavLink exact to="/" className="nav-link">
+              HOME
+            </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#link">COURSE</Nav.Link>
+            <NavLink to="/course" className="nav-link">
+              COURSE
+            </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#link">BLOG</Nav.Link>
+            <NavLink to="/about" className="nav-link">
+              ABOUT US
+            </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#link">ABOUT US</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#link">CONTACT</Nav.Link>
+            <NavLink to="/contact" className="nav-link">
+              CONTACT
+            </NavLink>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

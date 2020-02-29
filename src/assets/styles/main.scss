@@ -1,36 +1,36 @@
 //Bootstrap apply here
 @import "~bootstrap/scss/bootstrap.scss";
+
 // Helper apply here
 @import "../styles/Helper/variable.scss";
 @import "../styles/Helper/mixin.scss";
+
 //Base apply here
 @import "../styles/Base/reset.scss";
 @import "../styles/Base/customize.scss";
+
 //Layout apply here
 @import "../../Layouts/HeaderDefault/style.scss";
 @import "../../Layouts/NavBarDefault/style.scss";
 @import "../../Layouts/FooterDefault/style.scss";
+@import "../../Layouts/SearchDefault/style.scss";
+
 //Component apply here
 //HomeComponent
-//Carousel
 @import "../../Components/HomeComponent/Carousel/style.scss";
-//Feature
 @import "../../Components/HomeComponent/Feature/style.scss";
-//Search
-@import "../../Layouts/SearchDefault/style.scss";
-//Course
 @import "../../Components/CourseComponent/style.scss";
 @import "../../Components/CourseComponent/CourseItem/style.scss";
-//Review
 @import "../../Components/HomeComponent/Review/style.scss";
-//Subscribe
 @import "../../Components/HomeComponent/Subscribe/style.scss";
+
 //AboutUsComponent
 @import "../../Components/AboutUsComponent/Breadcrums/style.scss";
 @import "../../Components/AboutUsComponent/FeatureCourse/style.scss";
 @import "../../Components/AboutUsComponent/CountUpStudent/style.scss";
 @import "../../Components/AboutUsComponent/LinktoContact/style.scss";
 @import "../../Components/AboutUsComponent/ClientSlider/style.scss";
+
 //ContactComponent
 @import "../../Components/ContactComponent/GoogleMap/style.scss";
 @import "../../Components/ContactComponent/ContactForm/style.scss";
