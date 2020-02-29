@@ -5,7 +5,6 @@ import FeatureComponent from "../../Components/HomeComponent/Feature";
 import SearchComponent from "../../Layouts/SearchDefault";
 import CourseComponent from "../../Components/CourseComponent";
 import ReviewComponent from "../../Components/HomeComponent/Review";
-import SubcribeComponent from "../../Components/HomeComponent/Subscribe";
 const HomePage = () => {
   return (
     <Container fluid="true" className="p-0">
@@ -14,7 +13,6 @@ const HomePage = () => {
       <SearchComponent />
       <CourseComponent />
       <ReviewComponent />
-      <SubcribeComponent />
     </Container>
   );
 };

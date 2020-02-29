@@ -1,5 +1,5 @@
 import React from "react";
-import { classPrefixor } from "../../../Utils/classPrefixor";
+import { classPrefixor } from "../../Utils/classPrefixor";
 import {
   Col,
   Row,
