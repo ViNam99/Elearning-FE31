@@ -1,0 +1,39 @@
+.courseItem {
+    .card {
+      border: gainsboro solid 0.5px;
+      cursor: pointer;
+      &:hover .card-title {
+        transition: all 0.5s;
+        @include styleText(
+          $color-blue-0 !important,
+          $font-size-1 !important,
+          $font-weight-0 !important
+        );
+      }
+      &:active {
+        border: none;
+      }
+      .card-body {
+        text-align: center;
+        .card-title {
+          @include styleText($color-black-1, $font-size-1, $font-weight-0);
+        }
+      }
+    }
+    &__btn {
+      @include styleButton(
+        $color-white-0,
+        $color-blue-0,
+        10px,
+        $padding-4 + 5,
+        $border-radius-0
+      );
+      @include styleText($color-blue-0, $font-size-0, $default-font-weight);
+      margin-top: $margin-3;
+      &:hover {
+        transition: all 0.5s;
+        @include styleHover($color-blue-0, $color-blue-0, $color-white-0);
+      }
+    }
+  }
+  

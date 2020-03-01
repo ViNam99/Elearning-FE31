@@ -2,8 +2,8 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import useFetchCourseList from "../../Common/useFetchCourseList";
-import { classPrefixor } from "../../../Utils/classPrefixor";
+import useFetchCourseList from '../../../Common/useFetchCourseList'
+import { classPrefixor } from "../../../../Utils/classPrefixor";
 const CourseItem = () => {
   const prefix = "courseItem";
   const c = classPrefixor(prefix);

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import CarouselComponent from "../../Components/HomeComponent/Carousel";
 import FeatureComponent from "../../Components/HomeComponent/Feature";
 import SearchComponent from "../../Layouts/SearchDefault";
-import CourseComponent from "../../Components/CourseComponent";
+import CourseComponent from "../../Components/HomeComponent/CourseSlider";
 import ReviewComponent from "../../Components/HomeComponent/Review";
 const HomePage = () => {
   return (

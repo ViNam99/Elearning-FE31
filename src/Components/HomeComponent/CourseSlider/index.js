@@ -2,8 +2,8 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
-import { classPrefixor } from "../../Utils/classPrefixor";
-import CourseItem from "./CourseItem/CourseItem";
+import CourseItem from "./CourseItem";
+import { classPrefixor } from "../../../Utils/classPrefixor";
 const CourseComponent = () => {
   const prefix = "course";
   const c = classPrefixor(prefix);
