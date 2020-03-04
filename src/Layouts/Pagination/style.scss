@@ -1,0 +1,25 @@
+.pagination {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  li {
+    padding: 5px;
+    a {
+      @include styleText(
+        $color-black-0 !important,
+        $default-font-size,
+        $default-font-weight
+      );
+      &:focus {
+        @include styleText(
+          $color-blue-0 !important,
+          $default-font-size,
+          $default-font-weight
+        );
+        box-shadow: none;
+        border: 2px solid $color-blue-0;
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@
 @import "../../Layouts/FooterDefault/style.scss";
 @import "../../Layouts/SearchDefault/style.scss";
 @import "../../Layouts/SubscribeDefault/style.scss";
+@import "../../Layouts/Pagination/style.scss";
 //Component apply here
 //HomeComponent
 @import "../../Components/HomeComponent/Carousel/style.scss";
@@ -33,3 +34,8 @@
 //ContactComponent
 @import "../../Components/ContactComponent/GoogleMap/style.scss";
 @import "../../Components/ContactComponent/ContactForm/style.scss";
+
+//CourseComponent
+@import "../../Components/CourseComponent/CourseBaner/style.scss";
+@import "../../Components/CourseComponent/CourseCategory/style.scss";
+@import "../../Components/CourseComponent/CourseCategory/CourseItem/style.scss";

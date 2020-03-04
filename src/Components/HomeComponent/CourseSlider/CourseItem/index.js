@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import useFetchCourseList from '../../../Common/useFetchCourseList'
+import { useSelector, useDispatch } from "react-redux";
 import { classPrefixor } from "../../../../Utils/classPrefixor";
+import { fetchCourseListAction } from "../../../../redux/Actions/Course";
 const CourseItem = () => {
   const prefix = "courseItem";
   const c = classPrefixor(prefix);
-  const { courseList } = useFetchCourseList();
+  const dispatch = useDispatch();
+  const { courseList } = useSelector(state => state.CourseReducer);
+  useEffect(() => {
+    dispatch(fetchCourseListAction());
+  }, []);
+
   const renderCourseList = () => {
     return courseList.map((course, index) => {
       return (
