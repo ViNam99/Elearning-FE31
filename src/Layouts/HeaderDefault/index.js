@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col } from "react-bootstrap";
+import { connect } from "react-redux";
 import {
   faUser,
   faLock,
@@ -9,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { classPrefixor } from "../../Utils/classPrefixor";
 import { Link } from "react-router-dom";
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
   const prefix = "header";
   const c = classPrefixor(prefix);
   return (
@@ -53,6 +54,13 @@ const HeaderComponent = () => {
                   (0)
                 </p>
               </Col>
+              <Col lg="1">
+                {props.credentials && (
+                  <p>
+                    Hello, {props.credentials.hoTen}
+                  </p>
+                )}
+              </Col>
             </Row>
           </Col>
         </Row>
@@ -61,4 +69,6 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default connect(state => ({
+  credentials: state.user.credentials
+}))(HeaderComponent);

@@ -196,4 +196,4 @@ const SignUp = props => {
     </Container>
   );
 }
-export default connect()(SignUp);
+export default SignUp;

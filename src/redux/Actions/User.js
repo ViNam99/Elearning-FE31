@@ -11,7 +11,6 @@ export const fetchCredentialAction = (value, history) => dispatch => {
         .then(res => {
             localStorage.setItem('userLogin', JSON.stringify(res.data));
             dispatch(createAction(USER_TYPE.FETCH_LIST_SUCCESS, res.data));
-            console.log(res.data);
             console.log("dang nhap thanh cong");
             if (res.data.maLoaiNguoiDung === "GV") {
                 history.replace("/admin");

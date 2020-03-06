@@ -3,6 +3,6 @@ import CourseReducer from './Course';
 import UserReducer from './User';
 const RootReducer = combineReducers({
     CourseReducer,
-    UserReducer
+    user: UserReducer
 })
 export default RootReducer;
