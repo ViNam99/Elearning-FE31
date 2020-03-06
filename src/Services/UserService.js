@@ -38,11 +38,11 @@ class UserService {
             data: value
         })
     }
-    signup =() =>{
+    signup = (value) =>{
       return axios({
         method:"POST",
         url:`QuanLyNguoiDung/DangKy`,
-        
+        data:value
       })
     }
 }

@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const SignIn = props => {
   const _handleSubmit = value => {
-    props.dispatch(fetchCredentialAction(value));
+    props.dispatch(fetchCredentialAction(value, props.history));
   };
   const classes = useStyles();
   return (
@@ -88,7 +88,7 @@ const SignIn = props => {
             value={values.taiKhoan}
           />
           {errors.taiKhoan && touched.taiKhoan ? (
-            <div style={{color:"red"}}>{errors.taiKhoan} !!!</div>
+            <div className="alert alert-primary">{errors.taiKhoan} !</div>
           ) : null}
           <TextField
             variant="outlined"
@@ -104,7 +104,7 @@ const SignIn = props => {
             value={values.matKhau}
           />
              {errors.matKhau && touched.matKhau ? (
-            <div style={{color:"red"}}>{errors.matKhau} !!!</div>
+            <div className="alert alert-primary">{errors.matKhau} !</div>
           ) : null}
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

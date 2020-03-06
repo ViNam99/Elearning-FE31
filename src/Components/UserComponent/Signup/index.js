@@ -12,7 +12,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import { Formik, Form } from "formik";
+import { connect } from "react-redux"
+import { postCredentialAction } from '../../../redux/Actions/User';
+import { SignUpUserSchema } from '../../../Services/UserService';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -46,9 +49,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
+const SignUp = props => {
+  const _handleSubmit = value =>{
+    props.history.push("/signIn" , {
+      taiKhoan:value.taiKhoan,
+      matKhau:value.matKhau
+    });
+    props.dispatch(postCredentialAction(value));
+  };
   const classes = useStyles();
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -59,30 +68,69 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <Formik
+        initialValues={{
+          taiKhoan: "",
+          matKhau: "",
+          hoTen: "",
+          email: "",
+          soDT: "",
+          maNhom: "GP01"
+        }}
+        onSubmit={_handleSubmit}
+        validationSchema={SignUpUserSchema} 
+        render={({ handleChange, values, errors, touched }) =>(
+        <Form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="taiKhoan"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="taiKhoan"
+                label="Account"
                 autoFocus
+                onChange={handleChange}
+                value={values.taiKhoan}
               />
+             {errors.taiKhoan && touched.taiKhoan ? (
+            <div className="alert alert-primary">{errors.taiKhoan} !</div>
+          ) : null}
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
+                id="matKhau"
+                label="Password"
+                name="matKhau"
+                autoComplete="current-password"
+                type="password"
+                onChange={handleChange}
+                value={values.matKhau}
               />
+            {errors.matKhau && touched.matKhau ? (
+            <div className="alert alert-primary">{errors.matKhau} !</div>
+          ) : null}
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="hoTen"
+                label="Name"
+                name="hoTen"
+                autoComplete="name"
+                onChange={handleChange}
+                value={values.hoTen}
+              />
+                     {errors.hoTen && touched.hoTen ? (
+            <div className="alert alert-primary">{errors.hoTen} !</div>
+          ) : null}
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -93,19 +141,28 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
+                value={values.email}
               />
+                     {errors.email && touched.email ? (
+            <div className="alert alert-primary">{errors.email} !</div>
+          ) : null}
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
+                name="soDT"
+                label="Phone Number"
+                id="soDT"
                 autoComplete="current-password"
+                onChange={handleChange}
+                value={values.soDT}
               />
+                     {errors.soDT && touched.soDT ? (
+            <div className="alert alert-primary">{errors.soDT} !</div>
+          ) : null}
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -130,10 +187,13 @@ export default function SignUp() {
               </Link>
             </Grid>
           </Grid>
-        </form>
+        </Form>
+        )}
+        />
       </div>
       <Box mt={5}>
       </Box>
     </Container>
   );
 }
+export default connect()(SignUp);
