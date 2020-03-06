@@ -6,7 +6,7 @@ const NavbarComponent = () => {
   const prefix = "nav";
   return (
     <Navbar expand="lg" className={prefix}>
-      <Navbar.Brand href="#home">
+      <Navbar.Brand >
         <img src={logo} alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

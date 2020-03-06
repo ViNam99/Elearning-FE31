@@ -8,6 +8,7 @@ import {
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
 import { classPrefixor } from "../../Utils/classPrefixor";
+import { Link } from "react-router-dom";
 const HeaderComponent = () => {
   const prefix = "header";
   const c = classPrefixor(prefix);
@@ -32,14 +33,18 @@ const HeaderComponent = () => {
             <Row>
               <Col lg="4">
                 <p>
-                  <FontAwesomeIcon icon={faUser} className="icon" />
-                  <span>SIGN UP</span>
+                  <Link to="/signUp">
+                    <FontAwesomeIcon icon={faUser} className="icon" />
+                    <span>SIGN UP</span>
+                  </Link>
                 </p>
               </Col>
               <Col lg="4">
                 <p>
-                  <FontAwesomeIcon icon={faLock} className="icon" />
-                  <span>SIGN IN</span>
+                  <Link to="/signIn">
+                    <FontAwesomeIcon icon={faLock} className="icon" />
+                    <span>SIGN IN</span>
+                  </Link>
                 </p>
               </Col>
               <Col lg="3">

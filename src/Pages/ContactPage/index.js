@@ -6,13 +6,15 @@ import { Container } from "reactstrap";
 
 const ContactPage = () => {
   return (
-    <div style={{ backgroundColor: "#f4f4f4", padding: "80px" }}>
-      <Container>
-        <Breadcrumbs />
-        <GoogleMap />
-        <ContactForm />
-      </Container>
-    </div>
+    <>
+      <Breadcrumbs />
+      <div style={{ backgroundColor: "#f4f4f4", padding: "80px" }}>
+        <Container>
+          <GoogleMap />
+          <ContactForm />
+        </Container>
+      </div>
+    </>
   );
 };
 

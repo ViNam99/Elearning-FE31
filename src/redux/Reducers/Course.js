@@ -18,6 +18,7 @@ const CourseReducer = (state = initialState, action) => {
         courseList: action.data.items,
         totalCount: action.data.totalCount,
         loading: false
+        
       };
     }
     case COURSES_TYPE.FETCH_LIST_FAILURE: {

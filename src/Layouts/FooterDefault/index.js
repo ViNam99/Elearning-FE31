@@ -61,7 +61,7 @@ const FooterComponent = () => {
             <div className="wrapper">
               <div className="logo">
                 <a href="index.html">
-                  <img src={logo} alt />
+                  <img src={logo}  />
                 </a>
               </div>
               <p>
