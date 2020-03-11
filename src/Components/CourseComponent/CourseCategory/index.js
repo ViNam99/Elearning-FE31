@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Col, Row, Nav } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import { classPrefixor } from "../../../Utils/classPrefixor";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,6 +10,10 @@ import {
 import CourseItem from "./CourseItem";
 import useFetchCourseList from "../../Common/useFetchCourseList";
 import Pagination from "../../../Layouts/Pagination";
+import useStyles from "../../Common/useStyle.";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+
 const CourseCategory = () => {
   const prefix = "courseCategory";
   const c = classPrefixor(prefix);
@@ -17,18 +21,19 @@ const CourseCategory = () => {
   const { courseCategory } = useSelector(state => state.CourseCategoryReducer);
   const { courseByCategory } = useSelector(state => state.CourseReducer);
   const { totalCount, currentPage } = useFetchCourseList();
+  const classes = useStyles();
+  const [value, setValue] = useState(0);
   useEffect(() => {
     dispatch(fetchCourseCategoryAction());
   }, []);
   const renderCourseCategory = () => {
     return courseCategory.map((item, index) => {
       return (
-        <Nav.Link
+        <Tab
           key={index}
           onClick={() => dispatch(fetchCourseByCategoryAction(item.maDanhMuc))}
-        >
-          {item.tenDanhMuc}
-        </Nav.Link>
+          label={item.tenDanhMuc}
+        ></Tab>
       );
     });
   };
@@ -40,21 +45,29 @@ const CourseCategory = () => {
       });
     }
   };
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <section className={prefix}>
       <Row>
         <Col lg="2">
           <div className={c`category`}>
             <h2 className="text-center m-0"> Course Category</h2>
-            <div className={c`category__nav`}>
-              <Nav className="flex-column">
-                <Nav.Link
+            <div className={classes.root}>
+              <Tabs
+                orientation="vertical"
+                value={value}
+                className={classes.tabs}
+                onChange={handleChange}
+                variant="scrollable"
+              >
+                <Tab
                   onClick={() => dispatch(fetchCourseReviseAction(1, 8))}
-                >
-                  Tất cả
-                </Nav.Link>
+                  label="Tất cả"
+                />
                 {renderCourseCategory()}
-              </Nav>
+              </Tabs>
             </div>
           </div>
         </Col>
