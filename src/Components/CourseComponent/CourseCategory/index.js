@@ -16,7 +16,7 @@ const CourseCategory = () => {
   const dispatch = useDispatch();
   const { courseCategory } = useSelector(state => state.CourseCategoryReducer);
   const { courseByCategory } = useSelector(state => state.CourseReducer);
-  const { totalCount, handleChangePage} = useFetchCourseList();
+  const { totalCount, currentPage } = useFetchCourseList();
   useEffect(() => {
     dispatch(fetchCourseCategoryAction());
   }, []);
@@ -66,7 +66,7 @@ const CourseCategory = () => {
         <Pagination
           totalCount={totalCount}
           pageSize={8}
-          handleChangePage={handleChangePage}
+          currentPage={currentPage}
         />
       </Row>
     </section>

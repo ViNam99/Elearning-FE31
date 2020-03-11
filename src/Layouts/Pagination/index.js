@@ -1,36 +1,27 @@
-import React from "react";
-import { Pagination } from "react-bootstrap";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createAction } from "../../redux/Actions";
 import { CHANGE_PAGE_TYPE } from "../../redux/Constants";
+import Pagination from "@material-ui/lab/Pagination";
 const PaginationComponent = ({ ...props }) => {
   const dispatch = useDispatch();
-  const { totalCount, handleChangePage, pageSize } = props;
+  const { totalCount, pageSize, currentPage } = props;
   const totalPage = Math.ceil(totalCount / pageSize);
-  //   Ví dụ totalPage = 5 => [0, 1, 2, 3, 4]
-  const pages = [...Array(totalPage).keys()];
-  const renderPage = () => {
-    return pages.map((page, index) => {
-      return (
-        <Pagination.Item
-          key={index}
-          onClick={() => handleChangePage(page + 1)}
-        >
-          {page + 1}
-        </Pagination.Item>
-      );
-    });
-  };
-
-  const prevNextPage = value => {
-    dispatch(createAction(CHANGE_PAGE_TYPE.PREV_NEXT_SUCCESS, value));
+  const [page, setPage] = useState(currentPage);
+  const prefix = "pagination";
+  const handleChange = (event, value) => {
+    dispatch(createAction(CHANGE_PAGE_TYPE.CHANGE_PAGE_SUCCESS, value));
+    setPage(value);
   };
   return (
-    <Pagination>
-      <Pagination.Prev onClick={() => prevNextPage(false)} />
-      {renderPage()}
-      <Pagination.Next onClick={() => prevNextPage(true)} />
-    </Pagination>
+    <Pagination
+      className={prefix}
+      count={totalPage}
+      color="primary"
+      onChange={handleChange}
+      page={page}
+      defaultPage={1}
+    />
   );
 };
 

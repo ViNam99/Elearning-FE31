@@ -32,11 +32,6 @@ const CourseReducer = (state = initialState, action) => {
     case CHANGE_PAGE_TYPE.CHANGE_PAGE_SUCCESS: {
       return { ...state, currentPage: action.data };
     }
-    case CHANGE_PAGE_TYPE.PREV_NEXT_SUCCESS: {
-      let currentPage = state.currentPage;
-      action.data ? (currentPage += 1) : (currentPage -= 1);
-      return { ...state, currentPage };
-    }
     default: {
       return state;
     }
