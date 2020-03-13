@@ -8,6 +8,7 @@ import AboutPage from "./Pages/AboutPage";
 import CourseDetail from "./Pages/CourseDetailPage";
 import SignIn from "./Components/UserComponent/SignIn";
 import SignUp from "./Components/UserComponent/Signup";
+import ScrolltoTop from "./Utils/ScrolltoTop";
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,7 +17,9 @@ const App = () => {
           <Switch>
             <Route path="/contact" component={ContactPage} />
             <Route path="/about" component={AboutPage} />
-            <Route path="/courseDetail/:courseId" component={CourseDetail} />
+            <Route path="/courseDetail/:courseId" >
+              <CourseDetail/>
+              </Route>
             <Route path="/signIn" component={SignIn}/>
             <Route path="/signUp" component={SignUp}/>
             <Route path="/" component={HomePage} />
