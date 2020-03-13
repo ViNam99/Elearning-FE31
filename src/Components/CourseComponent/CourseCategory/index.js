@@ -10,6 +10,7 @@ import {
 import CourseItem from "./CourseItem";
 import useFetchCourseList from "../../Common/useFetchCourseList";
 import Pagination from "../../../Layouts/Pagination";
+import SearchCourse from "../SearchCourse";
 import useStyles from "../../Common/useStyle.";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -23,9 +24,11 @@ const CourseCategory = () => {
   const { totalCount, currentPage } = useFetchCourseList();
   const classes = useStyles();
   const [value, setValue] = useState(0);
+
   useEffect(() => {
     dispatch(fetchCourseCategoryAction());
   }, []);
+
   const renderCourseCategory = () => {
     return courseCategory.map((item, index) => {
       return (
@@ -45,11 +48,19 @@ const CourseCategory = () => {
       });
     }
   };
-  const handleChange = (event, newValue) => {
+
+  const handleChangeTab = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <section className={prefix}>
+      <Row>
+        <Col lg="9"></Col>
+        <Col lg="3">
+          <SearchCourse />
+        </Col>
+      </Row>
       <Row>
         <Col lg="2">
           <div className={c`category`}>
@@ -59,7 +70,7 @@ const CourseCategory = () => {
                 orientation="vertical"
                 value={value}
                 className={classes.tabs}
-                onChange={handleChange}
+                onChange={handleChangeTab}
                 variant="scrollable"
               >
                 <Tab

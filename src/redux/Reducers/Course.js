@@ -32,6 +32,9 @@ const CourseReducer = (state = initialState, action) => {
     case CHANGE_PAGE_TYPE.CHANGE_PAGE_SUCCESS: {
       return { ...state, currentPage: action.data };
     }
+    case COURSES_TYPE.SEARCH_SUCCESS: {
+      return { ...state, courseByCategory: action.data };
+    }
     default: {
       return state;
     }
