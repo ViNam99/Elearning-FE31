@@ -4,25 +4,29 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useFetchCourseList from '../../../Common/useFetchCourseList'
 import { classPrefixor } from "../../../../Utils/classPrefixor";
+import { Link } from "react-router-dom";
 const CourseItem = () => {
   const prefix = "courseItem";
   const c = classPrefixor(prefix);
   const { courseList } = useFetchCourseList();
   const renderCourseList = () => {
     return courseList.map((course, index) => {
+      const {hinhAnh, tenKhoaHoc, maKhoaHoc} = course;
       return (
         <div className="p-3" key={index}>
           <div className="card " key={index}>
             <img
               className="card-img-top"
-              src={course.hinhAnh}
-              alt={course.tenKhoaHoc}
+              src={hinhAnh}
+              alt={tenKhoaHoc}
               height={250}
               className="w-100"
             />
             <div className="card-body">
-              <h4 className="card-title">{course.tenKhoaHoc}</h4>
-              <button className={c`btn`}>JOIN NOW</button>
+              <h4 className="card-title">{tenKhoaHoc}</h4>
+                <Link to={`/courseDetail/`+ maKhoaHoc} className={c`btn`}>
+                JOIN NOW
+                </Link>
             </div>
           </div>
         </div>

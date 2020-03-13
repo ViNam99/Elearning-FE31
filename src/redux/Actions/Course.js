@@ -14,3 +14,4 @@ export const fetchCourseListAction = (currentPage, pageSize) => dispatch => {
       dispatch(createAction(COURSES_TYPE.FETCH_LIST_FAILURE, err.data));
     });
 };
+
