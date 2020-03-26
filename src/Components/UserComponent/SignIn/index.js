@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Formik, Form } from "formik";
 import { connect } from "react-redux"
-import { fetchCredentialAction } from '../../../redux/Actions/User';
+import { SignInAction } from '../../../redux/Actions/User';
 import { SignInUserSchema } from '../../../Services/UserService';
 function Copyright() {
   return (
@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const SignIn = props => {
   const _handleSubmit = value => {
-    props.dispatch(fetchCredentialAction(value, props.history));
+    props.dispatch(SignInAction(value, props.history));
   };
   const classes = useStyles();
   return (

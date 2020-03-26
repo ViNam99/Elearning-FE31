@@ -1,8 +1,9 @@
 import USER_TYPE from "../Constants/User"
 import { userService } from "../../Services";
 import { createAction } from ".";
+import {alertNotify, alertYesNo} from '../../Utils/alert';
 //async action
-export const fetchCredentialAction = (value, history) => dispatch => {
+export const SignInAction = (value, history) => dispatch => {
     dispatch({
         type: USER_TYPE.FETCH_LIST_REQUEST
     });
@@ -11,34 +12,24 @@ export const fetchCredentialAction = (value, history) => dispatch => {
         .then(res => {
             localStorage.setItem('userLogin', JSON.stringify(res.data));
             dispatch(createAction(USER_TYPE.FETCH_LIST_SUCCESS, res.data));
-            console.log("dang nhap thanh cong");
             if (res.data.maLoaiNguoiDung === "GV") {
                 history.replace("/admin");
-                console.log("Ban la Giang Vien");
             } else {
                 history.replace("/");
-                console.log("Ban la Hoc Vien");
-
             }
+            alertNotify("Thông Báo", "Đăng nhập thành công", "success");
         })
         .catch(err => {
             dispatch(createAction(USER_TYPE.FETCH_LIST_FAILURE, err.data));
-            console.log(err.response.data);
+            alertNotify("Thông Báo",err.response.data,"warning");
         })
 };
-export const postCredentialAction = (value) => dispatch => {
-    dispatch({
-        type: USER_TYPE.FETCH_LIST_REQUEST
-    });
+export const SignUpAction = (value, history)  => {
     userService
         .signup(value)
-        .then(res => {
-            dispatch(createAction(USER_TYPE.FETCH_LIST_SUCCESS, res.data));
-            console.log(res.data);
-            console.log("dang ky thanh cong")
+        .then((res) => {
         })
         .catch(err => {
-            dispatch(createAction(USER_TYPE.FETCH_LIST_FAILURE, err.data));
-            console.log(err.response.data);
+            alertNotify("Thông Báo", err.response.data, "warning")
         })
 }

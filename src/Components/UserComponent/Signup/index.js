@@ -13,9 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Formik, Form } from "formik";
-import { connect } from "react-redux"
-import { postCredentialAction } from '../../../redux/Actions/User';
+import { SignUpAction } from '../../../redux/Actions/User';
 import { SignUpUserSchema } from '../../../Services/UserService';
+import { alertYesNo, alertNotify } from '../../../Utils/alert';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -51,11 +51,20 @@ const useStyles = makeStyles(theme => ({
 
 const SignUp = props => {
   const _handleSubmit = value =>{
-    props.history.push("/signIn" , {
-      taiKhoan:value.taiKhoan,
-      matKhau:value.matKhau
-    });
-    props.dispatch(postCredentialAction(value));
+     SignUpAction(value);
+     alertYesNo("Thông Báo", "Đăng Ký Thành Công nhấn tiếp tục để qua trang đăng nhập nhấn cancel để quay lại trang chủ", "success", "Yes").then(
+      res => {
+        if (res.value) {
+              props.history.push("/signIn" , {
+              taiKhoan:value.taiKhoan,
+              matKhau:value.matKhau
+            });
+        }
+        else {
+          props.history.push("/")
+        }
+      }
+    );
   };
   const classes = useStyles();
   return (

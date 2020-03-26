@@ -39,6 +39,7 @@ class UserService {
         })
     }
     signup = (value) =>{
+      console.log(value);
       return axios({
         method:"POST",
         url:`QuanLyNguoiDung/DangKy`,
