@@ -11,6 +11,7 @@ export const SignInAction = (value, history) => dispatch => {
         .login(value)
         .then(res => {
             localStorage.setItem('userLogin', JSON.stringify(res.data));
+            localStorage.setItem('nameLogin', JSON.stringify(res.data.hoTen));
             dispatch(createAction(USER_TYPE.FETCH_LIST_SUCCESS, res.data));
             if (res.data.maLoaiNguoiDung === "GV") {
                 history.replace("/admin");
@@ -24,7 +25,7 @@ export const SignInAction = (value, history) => dispatch => {
             alertNotify("Thông Báo",err.response.data,"warning");
         })
 };
-export const SignUpAction = (value, history)  => {
+export const SignUpAction = (value)  => {
     userService
         .signup(value)
         .then((res) => {

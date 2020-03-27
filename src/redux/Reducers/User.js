@@ -9,6 +9,13 @@ const userReducer = (state = initialState, action)=>{
             state.credentials=action.data
             console.log(state.credentials);
             return {...state}
+        case "SAVE":
+            return {
+                  ...state,
+                  user: action.user
+                };
+        case "DELETE":
+            return {};
         default :  
             return state ;
     }

@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Formik, Form } from "formik";
-import { connect } from "react-redux"
+import { connect, useDispatch } from "react-redux"
 import { SignInAction } from '../../../redux/Actions/User';
 import { SignInUserSchema } from '../../../Services/UserService';
 function Copyright() {
@@ -48,8 +48,14 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
 const SignIn = props => {
+  const dispatch = useDispatch()
+  const remember = (e)=>{
+    let isChecked = e.target.checked;
+    dispatch({
+      type: "SAVE"
+    });
+  }
   const _handleSubmit = value => {
     props.dispatch(SignInAction(value, props.history));
   };
@@ -107,7 +113,7 @@ const SignIn = props => {
             <div className="alert alert-primary">{errors.matKhau} !</div>
           ) : null}
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            control={<Checkbox value="remember" color="primary" onChange={e => remember(e)}/>}
             label="Remember me"
           />
           <Button
