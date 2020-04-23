@@ -16,6 +16,7 @@ import { Formik, Form } from "formik";
 import { connect, useDispatch } from "react-redux"
 import { SignInAction } from '../../../redux/Actions/User';
 import { SignInUserSchema } from '../../../Services/UserService';
+import { SAVE } from '../../../redux/Constants/User';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -53,7 +54,7 @@ const SignIn = props => {
   const remember = (e)=>{
     let isChecked = e.target.checked;
     dispatch({
-      type: "SAVE"
+      type: SAVE
     });
   }
   const _handleSubmit = value => {

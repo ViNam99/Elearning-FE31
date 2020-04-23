@@ -9,6 +9,7 @@ import CourseDetail from "./Pages/CourseDetailPage";
 import SignIn from "./Components/UserComponent/SignIn";
 import SignUp from "./Components/UserComponent/Signup";
 import ScrolltoTop from "./Utils/ScrolltoTop";
+import CartPage from "./Pages/CartPage";
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ const App = () => {
           <Switch>
             <Route path="/contact" component={ContactPage} />
             <Route path="/about" component={AboutPage} />
+            <Route path="/cart" component={CartPage}/>
             <Route path="/courseDetail/:courseId" >
               <CourseDetail/>
               </Route>

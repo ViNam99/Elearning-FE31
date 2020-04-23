@@ -1,4 +1,4 @@
-import USER_TYPE from "../Constants/User";
+import USER_TYPE, { SAVE, DELETE } from "../Constants/User";
 const initialState = {
     credentials:null
 }
@@ -7,14 +7,13 @@ const userReducer = (state = initialState, action)=>{
         
         case USER_TYPE.FETCH_LIST_SUCCESS:
             state.credentials=action.data
-            console.log(state.credentials);
             return {...state}
-        case "SAVE":
+        case SAVE:
             return {
                   ...state,
                   user: action.user
                 };
-        case "DELETE":
+        case DELETE:
             return {};
         default :  
             return state ;

@@ -6,20 +6,22 @@ import {
   faUser,
   faLock,
   faCartArrowDown,
-  faPhone
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { classPrefixor } from "../../Utils/classPrefixor";
 import { Link } from "react-router-dom";
-const HeaderComponent = props => {
+import { DELETE } from "../../redux/Constants/User";
+const HeaderComponent = (props) => {
   const prefix = "header";
-  const state = useSelector(state => state.user)
+  const state = useSelector((state) => state.user);
+  const stateCart = useSelector((state) => state.cart);
   const c = classPrefixor(prefix);
   const dispatch = useDispatch();
-  const logout = () =>{
+  const logout = () => {
     dispatch({
-      type: "DELETE"
+      type: DELETE,
     });
-  }
+  };
   return (
     <header className={prefix}>
       <Container className={`${prefix}__content`}>
@@ -39,28 +41,32 @@ const HeaderComponent = props => {
           </Col>
           <Col lg="4">
             {state.credentials ? (
-            <Row>
-              <Col lg="4">
-                <p>Hello, {state.credentials.hoTen}</p>
-              </Col>
-              <Col lg="4">
-                  <p>
-                    <FontAwesomeIcon icon={faCartArrowDown} className="icon" />
-                    (0)
-                  </p>
+              <Row>
+                <Col lg="4">
+                  <p>{state.credentials.hoTen}</p>
                 </Col>
                 <Col lg="4">
-                <Link to="/signIn" className="text-white">
-                <button className="btn btn-danger" onClick={logout}>
-                  LOG OUT
-                  </button>
+                  <Link to="/signIn" className="text-white">
+                    <button className="btn btn-danger" onClick={logout}>
+                      LOG OUT
+                    </button>
                   </Link>
-
-                </Col>         
-            </Row>
+                </Col>
+                <Col lg="4">
+                    <Link to="/cart">
+                    <p>
+                      <FontAwesomeIcon
+                        icon={faCartArrowDown}
+                        className="icon"
+                      />
+                      <sup>{stateCart.count}</sup>
+                      </p>
+                    </Link>
+                </Col>
+              </Row>
             ) : (
               <Row>
-                <Col md="4">
+                <Col lg="4">
                   <p>
                     <Link to="/signUp">
                       <FontAwesomeIcon icon={faUser} className="icon" />
@@ -68,7 +74,7 @@ const HeaderComponent = props => {
                     </Link>
                   </p>
                 </Col>
-                <Col md="4">
+                <Col lg="4">
                   <p>
                     <Link to="/signIn">
                       <FontAwesomeIcon icon={faLock} className="icon" />
@@ -76,13 +82,18 @@ const HeaderComponent = props => {
                     </Link>
                   </p>
                 </Col>
-                <Col lg="3">
-                  <p> 
-                    <FontAwesomeIcon icon={faCartArrowDown} className="icon" />
-                    (0)
-                  </p>
+                <Col lg="4">
+                  <Link to="/cart">
+                    <p>
+                      <FontAwesomeIcon
+                        icon={faCartArrowDown}
+                        className="icon"
+                      ></FontAwesomeIcon>
+                      <sup>{stateCart.count}</sup>
+                    </p>
+                  </Link>
                 </Col>
-                </Row>
+              </Row>
             )}
           </Col>
         </Row>
@@ -91,4 +102,4 @@ const HeaderComponent = props => {
   );
 };
 
-export default (HeaderComponent);
+export default HeaderComponent;
