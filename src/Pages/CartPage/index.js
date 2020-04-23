@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 const CartPage = () => {
   const prefix = "cart-page";
   const state = useSelector((state) => state.cart);
+  const [total, setTotal] = useState(0);
   const [course, setCourse] = useState([
     {
       maKhoaHoc: "",
@@ -22,18 +23,36 @@ const CartPage = () => {
       },
     },
   ]);
+  let cart = state.cart;
+  const deleteCourse = (i) => {
+    console.log(i);
+    cart.slice(0,i);
+  };
+  const Subtotal = () => {
+    let i=0;
+    course.reduce((total, e) => {
+      if (e.luotXem) {
+        total += e.luotXem;
+      }
+      i=total;
+      return total;
+    }, 0);
+    setTotal(i);
+  };
   useEffect(() => {
     if (state.cart) {
       setCourse(state.cart);
-      console.log(state.cart);
     }
   }, [state]);
+  useEffect(() => {
+    Subtotal();
+  });
   return (
     <div className={prefix}>
       <div className="px-4 px-lg-0">
         {/* For demo purpose */}
         <div className="container text-white py-5 text-center">
-          <h1 className="display-4">Bootstrap 4 shopping cart</h1>
+          <h1 className="display-4">Your Cart</h1>
         </div>
         {/* End */}
         <div className="pb-5">
@@ -60,8 +79,8 @@ const CartPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {course.map((course, i) => (
-                        <tr key={i}>
+                      {course.map((course, key) => (
+                        <tr key={key}>
                           <th scope="row" className="border-0">
                             <div className="p-2">
                               <img
@@ -80,19 +99,24 @@ const CartPage = () => {
                                   </a>
                                 </h5>
                                 <span className="text-muted font-weight-normal font-italic d-block">
-                                  Category: {course.danhMucKhoaHoc.tenDanhMucKhoaHoc}
+                                  Category:{" "}
+                                  {course.danhMucKhoaHoc.tenDanhMucKhoaHoc}
                                 </span>
                               </div>
                             </div>
                           </th>
                           <td className="border-0 align-middle">
-                            <strong>$79.00</strong>
+                            <strong>${course.luotXem}</strong>
                           </td>
                           <td className="border-0 align-middle">
                             <strong>1</strong>
                           </td>
                           <td className="border-0 align-middle">
-                            <a href="#" className="text-dark">
+                            <a
+                              href="#"
+                              className="text-dark"
+                              onClick={() => deleteCourse(key)}
+                            >
                               <FontAwesomeIcon icon={faTrash} />
                             </a>
                           </td>
@@ -160,7 +184,7 @@ const CartPage = () => {
                   <ul className="list-unstyled mb-4">
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Order Subtotal </strong>
-                      <strong>$390.00</strong>
+                      <strong>${total}</strong>
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Tax</strong>
@@ -168,7 +192,7 @@ const CartPage = () => {
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Total</strong>
-                      <h5 className="font-weight-bold">$400.00</h5>
+                      <h5 className="font-weight-bold">${total}</h5>
                     </li>
                   </ul>
                   <a

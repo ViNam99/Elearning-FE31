@@ -44,13 +44,12 @@ const CourseDetail = (props) => {
                   <li>
                     <FontAwesomeIcon icon={faFlag} />
                   </li>
-                  <li>$75</li>
+                  <li>${course.luotXem}</li>
                 </ul>
               </div>
               <div className="clearfix bottom-content">
                 <ul className="course-schedule float-left">
                   <li>Ngày Tạo : {course.ngayTao}</li>
-                  <li>Lượt Xem: {course.luotXem}</li>
                 </ul>
                 <button
                   className="float-right theme-line-button"
