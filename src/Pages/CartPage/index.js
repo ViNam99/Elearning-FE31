@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { DELETE_CART } from "../../redux/Constants/Cart";
 const CartPage = () => {
   const prefix = "cart-page";
+  const dispatch = useDispatch();
   const state = useSelector((state) => state.cart);
+  let count = state.count;
   const [total, setTotal] = useState(0);
   const [course, setCourse] = useState([
     {
@@ -26,7 +29,10 @@ const CartPage = () => {
   let cart = state.cart;
   const deleteCourse = (i) => {
     console.log(i);
-    cart.slice(0,i);
+    dispatch({
+      type:DELETE_CART,
+      count:(count -=1)
+    })
   };
   const Subtotal = () => {
     let i=0;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./assets/styles/main.scss";
 import ContactPage from "./Pages/ContactPage";
@@ -8,7 +8,6 @@ import AboutPage from "./Pages/AboutPage";
 import CourseDetail from "./Pages/CourseDetailPage";
 import SignIn from "./Components/UserComponent/SignIn";
 import SignUp from "./Components/UserComponent/Signup";
-import ScrolltoTop from "./Utils/ScrolltoTop";
 import CartPage from "./Pages/CartPage";
 const App = () => {
   return (

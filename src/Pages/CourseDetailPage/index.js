@@ -13,8 +13,9 @@ const CourseDetail = (props) => {
   let cart = state.cart;
   const dispatch = useDispatch();
   const [course, setCourse] = useState({});
-  const addToCart = () => {
-      cart.push(course)
+  const addToCart = () => { 
+      cart.push(course);
+      localStorage.setItem("cartItem",JSON.stringify(cart));
         dispatch({
             type:ADD_TO_CART,
             count: (count += 1)

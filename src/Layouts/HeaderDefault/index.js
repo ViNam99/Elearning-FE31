@@ -7,10 +7,12 @@ import {
   faLock,
   faCartArrowDown,
   faPhone,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { classPrefixor } from "../../Utils/classPrefixor";
 import { Link } from "react-router-dom";
 import { DELETE } from "../../redux/Constants/User";
+import { Button } from "reactstrap";
 const HeaderComponent = (props) => {
   const prefix = "header";
   const state = useSelector((state) => state.user);
@@ -18,6 +20,8 @@ const HeaderComponent = (props) => {
   const c = classPrefixor(prefix);
   const dispatch = useDispatch();
   const logout = () => {
+    localStorage.removeItem("nameLogin");
+    localStorage.removeItem("userLogin");
     dispatch({
       type: DELETE,
     });
@@ -42,26 +46,25 @@ const HeaderComponent = (props) => {
           <Col lg="4">
             {state.credentials ? (
               <Row>
-                <Col lg="4">
-                  <p>{state.credentials.hoTen}</p>
+                <Col lg="6">
+                  <Button>Hi,{state.credentials.hoTen}</Button>
                 </Col>
-                <Col lg="4">
+                <Col lg="3">
                   <Link to="/signIn" className="text-white">
-                    <button className="btn btn-danger" onClick={logout}>
-                      LOG OUT
-                    </button>
+                  <Button onClick={logout}> LOGOUT
+                  </Button>
                   </Link>
                 </Col>
-                <Col lg="4">
-                    <Link to="/cart">
-                    <p>
+                <Col lg="3">
+                  <Link to="/cart">
+                    <Button>
                       <FontAwesomeIcon
                         icon={faCartArrowDown}
                         className="icon"
                       />
                       <sup>{stateCart.count}</sup>
-                      </p>
-                    </Link>
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             ) : (

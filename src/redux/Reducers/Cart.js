@@ -8,11 +8,13 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       state.count =action.count;
+      localStorage.setItem('countCart', JSON.stringify(state.count));
       return {
         ...state
       };
     case DELETE_CART:
-      state.cart= action.cart;
+      state.count= action.count;
+      state.cart=action.cart;
       return {
         ...state
       };
