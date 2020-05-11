@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { DELETE_CART } from "../../redux/Constants/Cart";
+import { alertNotify, alertYesNo } from "../../Utils/alert";
+import Swal from "sweetalert2";
 const CartPage = () => {
   const prefix = "cart-page";
   const dispatch = useDispatch();
@@ -10,6 +12,7 @@ const CartPage = () => {
   let count = state.count;
   const [total, setTotal] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
+  const [tax, setTax]= useState();
   const [course, setCourse] = useState([
     {
       maKhoaHoc: "",
@@ -27,11 +30,15 @@ const CartPage = () => {
       },
     },
   ]);
-  console.log(state.cart);
+  const Checkout = ()=>{   
+    if(!localStorage.getItem("nameLogin")){    
+    }
+    else{
+    }
+  }
   var cartArr = [];
   var cart = state.cart;
   const deleteCourse = (i) => {
-    console.log(cart.length);
     if(i>0){
     cart.splice(i,1);
     cartArr = cart; }
@@ -39,7 +46,6 @@ const CartPage = () => {
       cart.shift();
       cartArr=cart;
     }
-    console.log(cartArr);    
     dispatch({
       type:DELETE_CART,
       count:(count -=1),
@@ -56,9 +62,20 @@ const CartPage = () => {
       return total;
     }, 0);
     setSubtotal(i);
-    i = i*0.1+i;
+    i = (i*tax/100)+i;
     setTotal(i);
   };
+  useEffect(() => {
+    if(cart.length > 0 && cart.length < 5){
+      setTax(15);
+    }
+    else if (cart.length >= 5){
+      setTax(10);
+    }
+    else{
+      setTax(0);
+    }
+  });
   useEffect(() => {
     if (cart) {
       setCourse(cart)
@@ -208,7 +225,7 @@ const CartPage = () => {
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Tax</strong>
-                      <strong>+10%</strong>
+                      <strong>+{tax}%</strong>
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Total</strong>
@@ -216,8 +233,8 @@ const CartPage = () => {
                     </li>
                   </ul>
                   <a
-                    href="#"
-                    className="btn btn-dark rounded-pill py-2 btn-block"
+                    className="btn btn-dark rounded-pill py-2 btn-block text-white"
+                    onClick={Checkout}
                   >
                     Procceed to checkout
                   </a>

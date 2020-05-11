@@ -2,6 +2,7 @@ import USER_TYPE from "../Constants/User"
 import { userService } from "../../Services";
 import { createAction } from ".";
 import {alertNotify, alertYesNo} from '../../Utils/alert';
+import  Cookies  from "js-cookie";
 //async action
 export const SignInAction = (value, history) => dispatch => {
     dispatch({
@@ -10,8 +11,8 @@ export const SignInAction = (value, history) => dispatch => {
     userService
         .login(value)
         .then(res => {
-            localStorage.setItem('userLogin', JSON.stringify(res.data));
             localStorage.setItem('nameLogin', JSON.stringify(res.data.hoTen));
+            sessionStorage.setItem("Token", JSON.stringify(res.data.accessToken));
             dispatch(createAction(USER_TYPE.FETCH_LIST_SUCCESS, res.data));
             if (res.data.maLoaiNguoiDung === "GV") {
                 history.replace("/admin");

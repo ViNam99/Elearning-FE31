@@ -21,7 +21,7 @@ const HeaderComponent = (props) => {
   const dispatch = useDispatch();
   const logout = () => {
     localStorage.removeItem("nameLogin");
-    localStorage.removeItem("userLogin");
+    sessionStorage.removeItem("Token");
     dispatch({
       type: DELETE,
     });
