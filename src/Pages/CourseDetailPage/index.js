@@ -10,15 +10,18 @@ const CourseDetail = (props) => {
   const courseId = props.match.params.courseId;
   const state = useSelector((state) => state.cart);
   let count = state.count;
+  let cartAdd = [];
   let cart = state.cart;
   const dispatch = useDispatch();
   const [course, setCourse] = useState({});
   const addToCart = () => { 
-      cart.push(course);
-      localStorage.setItem("cartItem",JSON.stringify(cart));
+      cartAdd.push(course);
+      console.log(cartAdd[0]);
+      localStorage.setItem("cartItem",JSON.stringify(cartAdd));
         dispatch({
             type:ADD_TO_CART,
-            count: (count += 1)
+            count: (count += 1),
+            cart : cart.push(cartAdd[0])
         })
   };
   const prefix = "course-detail";

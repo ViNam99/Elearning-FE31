@@ -9,6 +9,7 @@ const CartPage = () => {
   const state = useSelector((state) => state.cart);
   let count = state.count;
   const [total, setTotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
   const [course, setCourse] = useState([
     {
       maKhoaHoc: "",
@@ -26,12 +27,23 @@ const CartPage = () => {
       },
     },
   ]);
-  let cart = state.cart;
+  console.log(state.cart);
+  var cartArr = [];
+  var cart = state.cart;
   const deleteCourse = (i) => {
-    console.log(i);
+    console.log(cart.length);
+    if(i>0){
+    cart.splice(i,1);
+    cartArr = cart; }
+    else {
+      cart.shift();
+      cartArr=cart;
+    }
+    console.log(cartArr);    
     dispatch({
       type:DELETE_CART,
-      count:(count -=1)
+      count:(count -=1),
+      cart: cartArr
     })
   };
   const Subtotal = () => {
@@ -43,13 +55,15 @@ const CartPage = () => {
       i=total;
       return total;
     }, 0);
+    setSubtotal(i);
+    i = i*0.1+i;
     setTotal(i);
   };
   useEffect(() => {
-    if (state.cart) {
-      setCourse(state.cart);
+    if (cart) {
+      setCourse(cart)
     }
-  }, [state]);
+  }, []);
   useEffect(() => {
     Subtotal();
   });
@@ -190,11 +204,11 @@ const CartPage = () => {
                   <ul className="list-unstyled mb-4">
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Order Subtotal </strong>
-                      <strong>${total}</strong>
+                      <strong>${subtotal}</strong>
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Tax</strong>
-                      <strong>$0.00</strong>
+                      <strong>+10%</strong>
                     </li>
                     <li className="d-flex justify-content-between py-3 border-bottom">
                       <strong className="text-muted">Total</strong>
