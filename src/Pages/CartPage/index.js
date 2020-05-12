@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { DELETE_CART } from "../../redux/Constants/Cart";
 import { alertNotify, alertYesNo } from "../../Utils/alert";
 import Swal from "sweetalert2";
-const CartPage = () => {
+const CartPage = (props) => {
   const prefix = "cart-page";
   const dispatch = useDispatch();
   const state = useSelector((state) => state.cart);
@@ -32,8 +32,24 @@ const CartPage = () => {
   ]);
   const Checkout = ()=>{   
     if(!localStorage.getItem("nameLogin")){    
+      alertYesNo("Warning", "You must login to continue ", "warning", "Login")
+      .then((res)=>{
+            if(res.value){
+              props.history.replace("/signIn");
+              console.log("Ok");
+            }
+      })
     }
     else{
+      alertYesNo("Notification", "You sure ?", "warning","Sure")
+      .then((res)=>{
+        if(res.value){
+          for(let i=0;i<cart.length;i++){
+            console.log(cart[0].maKhoaHoc);
+            
+          }
+        }
+      })
     }
   }
   var cartArr = [];

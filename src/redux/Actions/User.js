@@ -1,8 +1,7 @@
 import USER_TYPE from "../Constants/User"
 import { userService } from "../../Services";
 import { createAction } from ".";
-import {alertNotify, alertYesNo} from '../../Utils/alert';
-import  Cookies  from "js-cookie";
+import {alertNotify} from '../../Utils/alert';
 //async action
 export const SignInAction = (value, history) => dispatch => {
     dispatch({

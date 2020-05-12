@@ -17,7 +17,6 @@ const CourseDetail = (props) => {
   const addToCart = () => { 
       cartAdd.push(course);
       console.log(cartAdd[0]);
-      localStorage.setItem("cartItem",JSON.stringify(cartAdd));
         dispatch({
             type:ADD_TO_CART,
             count: (count += 1),
